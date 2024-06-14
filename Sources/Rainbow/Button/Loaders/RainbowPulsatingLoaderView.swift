@@ -1,0 +1,44 @@
+//
+//  RainbowPulsatingLoaderView.swift
+//
+//
+//  Created by Adam Dahan on 2024-06-14.
+//
+
+import SwiftUI
+
+/**
+ A view representing a pulsating loader.
+ 
+ This view displays a pulsating loader, with the circle animated in a pulsing manner.
+ */
+struct RainbowPulsatingLoaderView: View {
+    
+    /**
+     The configuration for the loader.
+     */
+    let configuration: RainbowButtonConfiguration
+    
+    /**
+     A state variable representing the scale of the loader.
+     */
+    @State private var scale: CGFloat = 1.0
+    
+    /**
+     The body of the view.
+     */
+    var body: some View {
+        Circle()
+            .fill(configuration.theme.foreground)
+            .frame(width: configuration.size.suggestedHeight, height: configuration.size.suggestedHeight)
+            .scaleEffect(scale)
+            .animation(
+                Animation.easeInOut(duration: 1.0)
+                    .repeatForever(autoreverses: true),
+                value: scale
+            )
+            .onAppear {
+                self.scale = 1.5
+            }
+    }
+}
