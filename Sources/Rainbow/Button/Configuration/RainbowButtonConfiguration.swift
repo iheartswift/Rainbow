@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 public struct RainbowButtonConfiguration {
     
@@ -178,7 +177,7 @@ extension RainbowButtonConfiguration {
             .setTheme(.default)
             .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
-            .setBorder(RainbowBorderOptions(colors: [Color(UIColor.label).opacity(0.2)], width: 1.0))
+            .setBorder(RainbowBorderOptions(colors: [RainbowColorTheme.default.foreground.opacity(0.2)], width: 1.0))
     }
     
     /// The default button configuration.

@@ -57,8 +57,8 @@ extension RainbowColorTheme {
      The default color theme.
      */
     public static let `default` = RainbowColorTheme(
-        background: Color(UIColor.systemBackground),
-        foreground: Color(UIColor.label)
+        background: color("systemBackground"),
+        foreground: color("label")
     )
     
     /**
@@ -127,7 +127,7 @@ extension RainbowColorTheme {
     
     public static let text = RainbowColorTheme(
         background: .clear,
-        foreground: Color(UIColor.label)
+        foreground: RainbowColorTheme.default.foreground
     )
     
     public static let ghost = RainbowColorTheme(

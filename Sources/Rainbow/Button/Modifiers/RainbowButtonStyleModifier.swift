@@ -55,7 +55,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
                 .tint(configuration.theme.foreground)
                 .opacity(isLoading ? 1.0 : 0.0)
         }
-        .underline(configuration.underline, color: Color(UIColor.label))
+        .underline(configuration.underline, color: RainbowColorTheme.default.foreground)
         .font(configuration.size.font)
         .padding(configuration.size.padding)
         .foregroundColor(configuration.theme.foreground)
