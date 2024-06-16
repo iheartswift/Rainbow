@@ -10,7 +10,7 @@ import Foundation
 /**
  An enumeration representing the different types of loaders that can be used in the Rainbow UI library.
  */
-enum RainbowLoaderType {
+public enum RainbowLoaderType {
     /**
      A rainbow-colored loader.
      */

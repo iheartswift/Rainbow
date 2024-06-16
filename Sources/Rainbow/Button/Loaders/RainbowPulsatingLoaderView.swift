@@ -28,8 +28,7 @@ struct RainbowPulsatingLoaderView: View {
      The body of the view.
      */
     var body: some View {
-        Circle()
-            .fill(configuration.theme.foreground)
+        circle
             .frame(width: configuration.size.suggestedHeight, height: configuration.size.suggestedHeight)
             .scaleEffect(scale)
             .animation(
@@ -40,5 +39,22 @@ struct RainbowPulsatingLoaderView: View {
             .onAppear {
                 self.scale = 1.5
             }
+    }
+    
+    @ViewBuilder
+    var circle: some View {
+        if let contentGradient = configuration.contentGradient {
+            Circle()
+                .fill(AngularGradient(
+                    gradient: .init(
+                        colors: contentGradient.colors
+                    ),
+                    center: .center
+                )
+            )
+        } else {
+            Circle()
+                .fill(configuration.theme.foreground)
+        }
     }
 }

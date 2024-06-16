@@ -10,13 +10,14 @@ import SwiftUI
 /**
  A struct representing options for a rainbow border.
  
- A rainbow border is a border that can be applied to a view, with a specified color and width.
+ A rainbow border is a border that can be applied to a view, with specified colors and width.
  */
 public struct RainbowBorderOptions {
+    
     /**
-     The color of the border.
+     The colors of the border.
      */
-    public var color: Color
+    public var colors: [Color]
     
     /**
      The width of the border.
@@ -24,14 +25,27 @@ public struct RainbowBorderOptions {
     public var width: CGFloat
     
     /**
-     Initializes a new instance of RainbowBorderOptions with the specified color and width.
+     The dash pattern for the border.
+     */
+    public var dashPattern: [CGFloat]
+    
+    /**
+     The Boolean to toggle animating between colors
+     */
+    public var animationOptions: RainbowBorderAnimationOptions? = nil
+    
+    /**
+     Initializes a new instance of RainbowBorderOptions with the specified colors, width, and dash pattern.
      
      - Parameters:
-       - color: The color of the border. Default is `.clear`.
-       - width: The width of the border. Default is `0`.
+       - colors: The colors of the border. Default is an array containing `.clear`.
+       - width: The width of the border. Default is `2.0`.
+       - dashPattern: The dash pattern for the border. Default is an empty array.
      */
-    public init(color: Color = .clear, width: CGFloat = 0) {
-        self.color = color
+    public init(colors: [Color] = [.clear], width: CGFloat = 2.0, dashPattern: [CGFloat] = [], animationOptions: RainbowBorderAnimationOptions? = nil) {
+        self.colors = colors
         self.width = width
+        self.dashPattern = dashPattern
+        self.animationOptions = animationOptions
     }
 }

@@ -8,16 +8,17 @@
 import SwiftUI
 import UIKit
 
-/**
- A struct representing the configuration options for a Rainbow Button.
- 
- A Rainbow Button is a customizable button that can be used in a variety of contexts.
- */
 public struct RainbowButtonConfiguration {
+    
     /**
      The color theme of the button.
      */
     public var theme: RainbowColorTheme
+    
+    /**
+     The font of the button.
+     */
+    public var font: Font?
     
     /**
      The border options of the button.
@@ -47,66 +48,101 @@ public struct RainbowButtonConfiguration {
     /**
      A Boolean indicating whether the button should use a capsule shape.
      */
-    public var useCapsuleShape: Bool
+    public var shapeType: RainbowButtonShapeType
+    
+    /**
+     The type of loader to display.
+     */
+    public var loaderType: RainbowLoaderType
+    
+    /**
+     The gradient to apply to the content (text and icon).
+     */
+    public var contentGradient: RainbowGradientOptions?
+    
+    /**
+     The gradient to apply to the background.
+     */
+    public var backgroundGradient: RainbowGradientOptions?
+    
+    /**
+     The sound options for the button.
+     */
+    public var sound: RainbowSoundOptions?
+    
+    /**
+     The haptic options for the button.
+     */
+    public var haptic: RainbowHapticOptions?
+    
+    /**
+     The buttons bounce options
+     */
+    public var bounce: RainbowBounceAnimationOptions?
     
     /**
      Initializes a new instance of RainbowButtonConfiguration with the specified options.
      
      - Parameters:
        - theme: The color theme of the button. Default is `.primary`.
+       - font: The font of the button. Default is `nil`.
        - border: The border options of the button. Default is `RainbowBorderOptions()`.
        - shadow: The shadow options of the button. Default is `RainbowShadowOptions()`.
        - cornerRadius: The corner radius of the button. Default is `8`.
        - underline: A Boolean indicating whether the button should have an underline. Default is `false`.
        - size: The size of the button. Default is `.normal`.
        - useCapsuleShape: A Boolean indicating whether the button should use a capsule shape. Default is `false`.
+       - loaderType: The kind of loader to display if @State variable isLoading is active. Default is `.progress`.
+       - contentGradient: The gradient to apply to the content (text and icon). Default is `nil`.
+       - backgroundGradient: The gradient to apply to the background. Default is `nil`.
+       - sound: The sound options for the button. Default is `nil`.
+       - haptic: The haptic options for the button. Default is `nil`.
+       - bounce: The bounce animation options for the button: Default is `nil`
      */
     public init(
         theme: RainbowColorTheme = .primary,
+        font: Font? = nil,
         border: RainbowBorderOptions = RainbowBorderOptions(),
         shadow: RainbowShadowOptions = RainbowShadowOptions(),
         cornerRadius: CGFloat = 8,
         underline: Bool = false,
         size: RainbowButtonSize = .normal,
-        useCapsuleShape: Bool = false
+        shapeType: RainbowButtonShapeType = .roundedRectangle,
+        loaderType: RainbowLoaderType = .progress,
+        contentGradient: RainbowGradientOptions? = nil,
+        backgroundGradient: RainbowGradientOptions? = nil,
+        sound: RainbowSoundOptions? = nil,
+        haptic: RainbowHapticOptions? = nil,
+        bounce: RainbowBounceAnimationOptions? = nil
     ) {
         self.theme = theme
+        self.font = font
         self.border = border
         self.shadow = shadow
         self.cornerRadius = cornerRadius
         self.underline = underline
         self.size = size
-        self.useCapsuleShape = useCapsuleShape
+        self.shapeType = shapeType
+        self.loaderType = loaderType
+        self.contentGradient = contentGradient
+        self.backgroundGradient = backgroundGradient
+        self.sound = sound
+        self.haptic = haptic
+        self.bounce = bounce
     }
     
-    /**
-     Returns a new instance of RainbowButtonConfiguration with the theme inverted.
-     
-     - Returns: A new instance of RainbowButtonConfiguration with the theme inverted.
-     */
     public func invertTheme() -> RainbowButtonConfiguration {
         var c = self
         c.theme = c.theme.inverted()
         return c
     }
     
-    /**
-     Returns a new instance of RainbowButtonConfiguration with the useCapsuleShape option set to true.
-     
-     - Returns: A new instance of RainbowButtonConfiguration with the useCapsuleShape option set to true.
-     */
     public func capsule() -> RainbowButtonConfiguration {
         var c = self
-        c.useCapsuleShape = true
+        c.shapeType = RainbowButtonShapeType.capsule
         return c
     }
     
-    /**
-     Returns a new instance of RainbowButtonConfiguration with the specified size.
-     
-     - Parameter size: The new size of the button.
-     - Returns: A new instance of RainbowButtonConfiguration with the specified size.
-     */
     public func update(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
         var c = self
         c.size = size
@@ -114,10 +150,37 @@ public struct RainbowButtonConfiguration {
     }
 }
 
+
+extension RainbowButtonConfiguration {
+
+    public static var defaultCornerRadius: CGFloat = 8.0
+}
+
 /**
  Extensions to the RainbowButtonConfiguration type to provide various pre-defined configurations.
  */
 extension RainbowButtonConfiguration {
+    
+    public static func rainbow(
+        shapeType: RainbowButtonShapeType,
+        colors: [Color] = [.yellow, .green, .blue, .red, .purple, .orange],
+        borderWidth: CGFloat = 5.0,
+        animationInterval: TimeInterval = 0.5
+    ) -> RainbowButtonConfiguration {
+        return RainbowButtonConfigurationBuilder()
+            .setShape(type: shapeType)
+            .setLoader(.rainbow)
+            .setTheme(RainbowColorTheme(background: .black, foreground: .clear, selected: .yellow.opacity(0.3)))
+            .setBorder(RainbowBorderOptions(
+                    colors: colors,
+                    width: borderWidth,
+                    animationOptions: RainbowBorderAnimationOptions(interval: animationInterval)
+                )
+            )
+            .setContentGradient(RainbowGradientOptions(colors: colors))
+            .build()
+    }
+    
     /**
      Creates an outlined button configuration with the specified theme.
      
@@ -128,22 +191,43 @@ extension RainbowButtonConfiguration {
         let backingTheme = RainbowColorTheme.outlined(theme: theme)
         return RainbowButtonConfigurationBuilder()
             .setTheme(backingTheme)
-            .setBorder(RainbowBorderOptions(color: backingTheme.foreground, width: 2))
-            .setCornerRadius(8)
+            .setBorder(RainbowBorderOptions(colors: [backingTheme.foreground], width: 2))
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
+    }
+    
+    public static var defaultBuilder: RainbowButtonConfigurationBuilder {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.default)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
+            .setUnderline(false)
+            .setBorder(RainbowBorderOptions(colors: [Color(UIColor.label).opacity(0.2)], width: 1.0))
     }
     
     /**
      The default button configuration.
      */
     public static var `default`: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.default)
-            .setCornerRadius(8)
-            .setUnderline(false)
-            .setBorder(RainbowBorderOptions(color: Color(UIColor.label).opacity(0.2), width: 1.0))
+       defaultBuilder
             .build()
+    }
+    
+    public static func defaultButton(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
+        defaultBuilder
+            .setSize(size)
+            .build()
+    }
+    
+    public static func button(
+        _ configuration: RainbowButtonConfiguration,
+        _ shape: RainbowButtonShapeType,
+        _ size: RainbowButtonSize = .extraLarge
+    ) -> RainbowButtonConfiguration {
+        var c = configuration
+        c.size = size
+        c.shapeType = shape
+        return c
     }
     
     /**
@@ -152,7 +236,7 @@ extension RainbowButtonConfiguration {
     public static var white: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.white)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -160,7 +244,7 @@ extension RainbowButtonConfiguration {
     public static var light: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.light)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -168,7 +252,7 @@ extension RainbowButtonConfiguration {
     public static var dark: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.dark)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -176,7 +260,7 @@ extension RainbowButtonConfiguration {
     public static var black: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.black)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -200,7 +284,7 @@ extension RainbowButtonConfiguration {
     public static var primary: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.primary)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -208,7 +292,7 @@ extension RainbowButtonConfiguration {
     public static var primaryLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.primaryLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -216,8 +300,9 @@ extension RainbowButtonConfiguration {
     public static var primaryInverted: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.primary)
+            .setFont(.largeTitle)
             .invertTheme()
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -225,16 +310,15 @@ extension RainbowButtonConfiguration {
     public static var link: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.link)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
-            .setCapsuleShape(bool: true)
             .build()
     }
     
     public static var linkLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.linkLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -242,7 +326,7 @@ extension RainbowButtonConfiguration {
     public static var linkInverted: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.link)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .invertTheme()
             .build()
@@ -251,7 +335,7 @@ extension RainbowButtonConfiguration {
     public static var info: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.info)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -259,7 +343,7 @@ extension RainbowButtonConfiguration {
     public static var infoLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.infoLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -268,7 +352,7 @@ extension RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.info)
             .invertTheme()
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -276,7 +360,7 @@ extension RainbowButtonConfiguration {
     public static var success: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.success)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -284,7 +368,7 @@ extension RainbowButtonConfiguration {
     public static var successLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.successLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -293,7 +377,7 @@ extension RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.success)
             .invertTheme()
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -301,7 +385,7 @@ extension RainbowButtonConfiguration {
     public static var warning: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.warning)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -309,7 +393,7 @@ extension RainbowButtonConfiguration {
     public static var warningLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.warningLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -318,7 +402,7 @@ extension RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.warning)
             .invertTheme()
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -326,7 +410,7 @@ extension RainbowButtonConfiguration {
     public static var danger: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.danger)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -334,7 +418,7 @@ extension RainbowButtonConfiguration {
     public static var dangerLight: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.dangerLight)
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }
@@ -343,7 +427,7 @@ extension RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.danger)
             .invertTheme()
-            .setCornerRadius(8)
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
             .build()
     }

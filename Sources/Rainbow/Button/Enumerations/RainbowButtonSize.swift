@@ -9,6 +9,7 @@ import SwiftUI
 
 /// An enum representing different sizes for a Rainbow Button.
 public enum RainbowButtonSize {
+    
     /// A small size for the button.
     case small
     /// A medium size for the button.

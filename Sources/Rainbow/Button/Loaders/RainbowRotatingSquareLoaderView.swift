@@ -27,8 +27,7 @@ struct RainbowRotatingSquareLoaderView: View {
      The body of the view.
      */
     var body: some View {
-        Rectangle()
-            .fill(configuration.theme.foreground)
+        rectangle
             .frame(width: configuration.size.suggestedHeight, height: configuration.size.suggestedHeight)
             .rotationEffect(Angle(degrees: isAnimating ? 360 : 0))
             .animation(
@@ -39,5 +38,22 @@ struct RainbowRotatingSquareLoaderView: View {
             .onAppear {
                 self.isAnimating = true
             }
+    }
+    
+    @ViewBuilder
+    var rectangle: some View {
+        if let contentGradient = configuration.contentGradient {
+            Rectangle()
+                .fill(AngularGradient(
+                    gradient: .init(
+                        colors: contentGradient.colors
+                    ),
+                    center: .center
+                )
+            )
+        } else {
+            Rectangle()
+                .fill(configuration.theme.foreground)
+        }
     }
 }

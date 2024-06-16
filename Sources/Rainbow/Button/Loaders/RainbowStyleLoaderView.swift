@@ -32,7 +32,7 @@ struct RainbowStyleLoaderView: View {
             .stroke(
                 AngularGradient(
                     gradient: .init(
-                        colors: [configuration.theme.foreground.opacity(0.5), configuration.theme.foreground]
+                        colors: colors
                     ),
                     center: .center
                 ),
@@ -53,5 +53,15 @@ struct RainbowStyleLoaderView: View {
                     self.isAnimating = true
                 }
             }
+
+    }
+    
+    @ViewBuilder
+    var colors: [Color] {
+        if let contentGradient = configuration.contentGradient {
+            return contentGradient.colors
+        } else {
+            return [configuration.theme.foreground.opacity(0.5), configuration.theme.foreground]
+        }
     }
 }

@@ -11,15 +11,21 @@ import SwiftUI
  A struct representing a color theme for the Rainbow UI components.
  */
 public struct RainbowColorTheme: Equatable {
+    
     /**
      The background color of the theme.
      */
-    let background: Color
+    public let background: Color
     
     /**
      The foreground color of the theme.
      */
-    let foreground: Color
+    public let foreground: Color
+    
+    /**
+     The selected color of the theme.
+     */
+    public let selected: Color
     
     /**
      Returns an inverted version of the theme.
@@ -27,12 +33,26 @@ public struct RainbowColorTheme: Equatable {
     public func inverted() -> RainbowColorTheme {
         return RainbowColorTheme(background: self.foreground, foreground: self.background)
     }
+    
+    /**
+     Public initializer for custom themes
+     */
+    public init(background: Color, foreground: Color, selected: Color = .gray.opacity(0.2)) {
+        self.background = background
+        self.foreground = foreground
+        self.selected = selected
+    }
 }
 
 /**
  Extensions to the RainbowColorTheme type to provide various pre-defined themes.
  */
 extension RainbowColorTheme {
+        
+    private static func color(_ name: String) -> Color {
+        return Color(name, bundle: Bundle.module)
+    }
+    
     /**
      The default color theme.
      */
@@ -56,33 +76,33 @@ extension RainbowColorTheme {
      Various pre-defined color themes.
      */
     public static let outlinePrimary = RainbowColorTheme(
-        background: Color("outline-primary-color"),
-        foreground: Color("outline-primary-color")
+        background: color("outline-primary-color"),
+        foreground: color("outline-primary-color")
     )
     
     public static let outlineLink = RainbowColorTheme(
-        background: Color("outline-link-color"),
-        foreground: Color("outline-link-color")
+        background: color("outline-link-color"),
+        foreground: color("outline-link-color")
     )
     
     public static let outlineInfo = RainbowColorTheme(
-        background: Color("outline-info-color"),
-        foreground: Color("outline-info-color")
+        background: color("outline-info-color"),
+        foreground: color("outline-info-color")
     )
     
     public static let outlineSuccess = RainbowColorTheme(
-        background: Color("outline-success-color"),
-        foreground: Color("outline-success-color")
+        background: color("outline-success-color"),
+        foreground: color("outline-success-color")
     )
     
     public static let outlineWarning = RainbowColorTheme(
-        background: Color("outline-warning-color"),
-        foreground: Color("outline-warning-color")
+        background: color("outline-warning-color"),
+        foreground: color("outline-warning-color")
     )
     
     public static let outlineDanger = RainbowColorTheme(
-        background: Color("outline-danger-color"),
-        foreground: Color("outline-danger-color")
+        background: color("outline-danger-color"),
+        foreground: color("outline-danger-color")
     )
     
     public static let white = RainbowColorTheme(
@@ -116,63 +136,63 @@ extension RainbowColorTheme {
     )
     
     public static let primary = RainbowColorTheme(
-        background: Color("primary-background-color"),
-        foreground: Color("primary-foreground-color")
+        background: color("primary-background-color"),
+        foreground: color("primary-foreground-color")
     )
     
     public static let link = RainbowColorTheme(
-        background: Color("link-background-color"),
-        foreground: Color("link-foreground-color")
+        background: color("link-background-color"),
+        foreground: color("link-foreground-color")
     )
     
     public static let info = RainbowColorTheme(
-        background: Color("info-background-color"),
-        foreground: Color("info-foreground-color")
+        background: color("info-background-color"),
+        foreground: color("info-foreground-color")
     )
     
     public static let success = RainbowColorTheme(
-        background: Color("success-background-color"),
-        foreground: Color("success-foreground-color")
+        background: color("success-background-color"),
+        foreground: color("success-foreground-color")
     )
     
     public static let warning = RainbowColorTheme(
-        background: Color("warning-background-color"),
-        foreground: Color("warning-foreground-color")
+        background: color("warning-background-color"),
+        foreground: color("warning-foreground-color")
     )
     
     public static let danger = RainbowColorTheme(
-        background: Color("danger-background-color"),
-        foreground: Color("danger-foreground-color")
+        background: color("danger-background-color"),
+        foreground: color("danger-foreground-color")
     )
     
     public static let primaryLight = RainbowColorTheme(
-        background: Color("primary-background-color-light"),
-        foreground: Color("primary-foreground-color-light")
+        background: color("primary-background-color-light"),
+        foreground: color("primary-foreground-color-light")
     )
     
     public static let linkLight = RainbowColorTheme(
-        background: Color("link-background-color-light"),
-        foreground: Color("link-foreground-color-light")
+        background: color("link-background-color-light"),
+        foreground: color("link-foreground-color-light")
     )
     
     public static let infoLight = RainbowColorTheme(
-        background: Color("info-background-color-light"),
-        foreground: Color("info-foreground-color-light")
+        background: color("info-background-color-light"),
+        foreground: color("info-foreground-color-light")
     )
     
     public static let successLight = RainbowColorTheme(
-        background: Color("success-background-color-light"),
-        foreground: Color("success-foreground-color-light")
+        background: color("success-background-color-light"),
+        foreground: color("success-foreground-color-light")
     )
     
     public static let warningLight = RainbowColorTheme(
-        background: Color("warning-background-color-light"),
-        foreground: Color("warning-foreground-color-light")
+        background: color("warning-background-color-light"),
+        foreground: color("warning-foreground-color-light")
     )
     
     public static let dangerLight = RainbowColorTheme(
-        background: Color("danger-background-color-light"),
-        foreground: Color("danger-foreground-color-light")
+        background: color("danger-background-color-light"),
+        foreground: color("danger-foreground-color-light")
     )
 }
 

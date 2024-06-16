@@ -19,15 +19,10 @@ public struct RainbowLoaderView: View {
     let configuration: RainbowButtonConfiguration
     
     /**
-     The type of loader to display.
-     */
-    let loaderType: RainbowLoaderType
-    
-    /**
      The body of the view.
      */
     public var body: some View {
-        switch loaderType {
+        switch configuration.loaderType {
         case .rainbow:
             RainbowStyleLoaderView(configuration: configuration)
         case .pulsating:
@@ -39,6 +34,6 @@ public struct RainbowLoaderView: View {
         case .progress:
             ProgressView()
                 .tint(configuration.theme.foreground)
-        }
+        }   
     }
 }

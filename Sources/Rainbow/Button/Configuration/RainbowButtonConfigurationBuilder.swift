@@ -5,7 +5,7 @@
 //  Created by Adam Dahan on 2024-06-14.
 //
 
-import Foundation
+import SwiftUI
 
 /**
  A builder class for creating RainbowButtonConfiguration instances.
@@ -17,6 +17,11 @@ public class RainbowButtonConfigurationBuilder {
      The color theme of the button.
      */
     private var theme: RainbowColorTheme = .default
+    
+    /**
+     The font of the button.
+     */
+    private var font: Font?
     
     /**
      The border options of the button.
@@ -46,7 +51,37 @@ public class RainbowButtonConfigurationBuilder {
     /**
      A Boolean indicating whether the button should use a capsule shape.
      */
-    private var useCapsuleShape: Bool = false
+    private var shapeType: RainbowButtonShapeType = .roundedRectangle
+    
+    /**
+     A Boolean indicating whether the button should use a capsule shape.
+     */
+    private var loaderType: RainbowLoaderType = .rainbow
+    
+    /**
+     The gradient options to apply to the content (text and icon).
+     */
+    private var contentGradient: RainbowGradientOptions? = nil
+    
+    /**
+     The gradient options to apply to the background
+     */
+    private var backgroundGradient: RainbowGradientOptions? = nil
+    
+    /**
+     The sound options to apply to the background
+     */
+    private var sound: RainbowSoundOptions? = nil
+    
+    /**
+     The haptic options to apply to the background
+     */
+    private var haptic: RainbowHapticOptions? = nil
+    
+    /**
+     The bounce animation options to apply to the button
+     */
+    private var bounce: RainbowBounceAnimationOptions? = nil
     
     /**
      Initializes a new instance of RainbowButtonConfigurationBuilder.
@@ -61,6 +96,17 @@ public class RainbowButtonConfigurationBuilder {
      */
     public func setTheme(_ theme: RainbowColorTheme) -> RainbowButtonConfigurationBuilder {
         self.theme = theme
+        return self
+    }
+    
+    /**
+     Sets the font of the button.
+     
+     - Parameter font: The font of the button.
+     - Returns: The builder instance.
+     */
+    public func setFont(_ font: Font?) -> RainbowButtonConfigurationBuilder {
+        self.font = font
         return self
     }
     
@@ -120,6 +166,72 @@ public class RainbowButtonConfigurationBuilder {
     }
     
     /**
+     Sets the loader style
+     
+     - Parameter type: The type of loader to load
+     - Returns: The builder instance.
+     */
+    public func setLoader(_ type: RainbowLoaderType = .progress) -> RainbowButtonConfigurationBuilder {
+        self.loaderType = type
+        return self
+    }
+    
+    /**
+     Sets the gradient options for the content (text and icon).
+     
+     - Parameter gradient: The gradient options to apply to the content.
+     - Returns: The builder instance.
+     */
+    public func setContentGradient(_ options: RainbowGradientOptions?) -> RainbowButtonConfigurationBuilder {
+        self.contentGradient = options
+        return self
+    }
+    
+    /**
+     Sets the gradient options for the background
+     
+     - Parameter gradient: The gradient options to apply to the background
+     - Returns: The builder instance.
+     */
+    public func setBackgroundGradient(_ options: RainbowGradientOptions?) -> RainbowButtonConfigurationBuilder {
+        self.backgroundGradient = options
+        return self
+    }
+    
+    /**
+     Sets the sound of the button.
+     
+     - Parameter options: The sound of the button.
+     - Returns: The builder instance.
+     */
+    public func setSound(_ options: RainbowSoundOptions) -> RainbowButtonConfigurationBuilder {
+        self.sound = options
+        return self
+    }
+    
+    /**
+     Sets the haptic of the button.
+     
+     - Parameter options: The haptic of the button.
+     - Returns: The builder instance.
+     */
+    public func setHaptic(_ options: RainbowHapticOptions) -> RainbowButtonConfigurationBuilder {
+        self.haptic = options
+        return self
+    }
+    
+    /**
+     Sets the haptic of the button.
+     
+     - Parameter options: The haptic of the button.
+     - Returns: The builder instance.
+     */
+    public func setBounce(_ options: RainbowBounceAnimationOptions) -> RainbowButtonConfigurationBuilder {
+        self.bounce = options
+        return self
+    }
+    
+    /**
      Inverts the color theme of the button.
      
      - Returns: The builder instance.
@@ -135,8 +247,8 @@ public class RainbowButtonConfigurationBuilder {
      - Parameter bool: A Boolean indicating whether the button should use a capsule shape.
      - Returns: The builder instance.
      */
-    public func setCapsuleShape(bool: Bool) -> RainbowButtonConfigurationBuilder {
-        self.useCapsuleShape = bool
+    public func setShape(type: RainbowButtonShapeType) -> RainbowButtonConfigurationBuilder {
+        self.shapeType = type
         return self
     }
     
@@ -148,12 +260,19 @@ public class RainbowButtonConfigurationBuilder {
     public func build() -> RainbowButtonConfiguration {
         return RainbowButtonConfiguration(
             theme: theme,
+            font: font,
             border: border,
             shadow: shadow,
-            cornerRadius: cornerRadius,
+            cornerRadius: shapeType == .rectangle ? 0.0 : cornerRadius,
             underline: underline,
             size: size,
-            useCapsuleShape: useCapsuleShape
+            shapeType: shapeType,
+            loaderType: loaderType,
+            contentGradient: contentGradient,
+            backgroundGradient: backgroundGradient,
+            sound: sound,
+            haptic: haptic,
+            bounce: bounce
         )
     }
 }

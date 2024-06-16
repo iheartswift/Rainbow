@@ -29,12 +29,33 @@ struct RainbowButtonModifier: ViewModifier {
     let action: () -> Void
     
     /**
+     The color when the button is pressed.
+     */
+    var pressedColor: Color = .blue // Set your preferred pressed color here
+    
+    /**
+     The default color of the button.
+     */
+    var defaultColor: Color = .gray // Set your preferred default color here
+    
+    /**
      The content view to apply the modifier to.
      */
     func body(content: Content) -> some View {
-        Button(action: action) {
+        Button(action: executeAction) {
             content
                 .rainbowButtonStyle(configuration: configuration, isLoading: $isLoading)
         }
+        .buttonStyle(RainbowButtonPressedStyle(buttonConfiguration: configuration))
+    }
+    
+    func executeAction() {
+        if let sound = configuration.sound {
+            sound.play()
+        }
+        if let haptic = configuration.haptic {
+            haptic.trigger()
+        }
+        action()
     }
 }

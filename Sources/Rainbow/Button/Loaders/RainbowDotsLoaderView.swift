@@ -30,7 +30,7 @@ struct RainbowDotsLoaderView: View {
         HStack(spacing: 5) {
             ForEach(0..<3) { index in
                 Circle()
-                    .fill(configuration.theme.foreground)
+                    .fill(fillColor)
                     .frame(
                         width: configuration.size.suggestedHeight / 3,
                         height: configuration.size.suggestedHeight / 3
@@ -46,6 +46,15 @@ struct RainbowDotsLoaderView: View {
         }
         .onAppear {
             self.isAnimating = true
+        }
+    }
+    
+    private var fillColor: Color {
+        let defaultColor = configuration.theme.foreground
+        if let contentGradient = configuration.contentGradient {
+            return contentGradient.colors.randomElement() ?? defaultColor
+        } else {
+            return defaultColor
         }
     }
 }
