@@ -31,7 +31,7 @@ public struct RainbowHapticOptions {
     ///   - feedbackProvider: The haptic feedback provider. Default is the appropriate provider based on platform.
     public init(selectedHaptic: HapticType? = nil, feedbackProvider: RainbowHapticFeedbackProvider? = nil) {
         self.selectedHaptic = selectedHaptic
-        #if canImport(UIKit) && !os(watchOS)
+        #if canImport(UIKit) && !os(watchOS) && !os(tvOS )
         self.feedbackProvider = feedbackProvider ?? RainbowHapticOptionsFeedbackProvider()
         #else
         self.feedbackProvider = feedbackProvider ?? RainbowNoOpHapticFeedbackProvider()

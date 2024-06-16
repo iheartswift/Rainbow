@@ -5,7 +5,7 @@
 //  Created by Adam Dahan on 2024-06-16.
 //
 
-#if canImport(UIKit) && !os(watchOS)
+#if canImport(UIKit) && !os(watchOS) && !os(tvOS)
 import UIKit
 
 public struct RainbowHapticOptionsFeedbackProvider: RainbowHapticFeedbackProvider {
