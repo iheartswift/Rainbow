@@ -53,6 +53,9 @@ public class RainbowButtonConfigurationBuilder {
     /// The bounce animation options for the button.
     private var bounce: RainbowBounceAnimationOptions? = nil
     
+    /// The focused style / animation options for the button when isFocused = true with @FocusState
+    private var focused: RainbowFocusedOptions = RainbowFocusedOptions()
+    
     /// Initializes a new instance of `RainbowButtonConfigurationBuilder`.
     public init() {}
     
@@ -173,6 +176,15 @@ public class RainbowButtonConfigurationBuilder {
         return self
     }
     
+    /// Sets the focused style / animation options for the button.
+    ///
+    /// - Parameter options: The bounce style / animation options for the button when isFocused with @FocusState.
+    /// - Returns: The builder instance.
+    public func setFocused(_ options: RainbowFocusedOptions) -> RainbowButtonConfigurationBuilder {
+        self.focused = options
+        return self
+    }
+    
     /// Inverts the color theme of the button.
     ///
     /// - Returns: The builder instance.
@@ -208,7 +220,8 @@ public class RainbowButtonConfigurationBuilder {
             backgroundGradient: backgroundGradient,
             sound: sound,
             haptic: haptic,
-            bounce: bounce
+            bounce: bounce,
+            focused: focused
         )
     }
 }

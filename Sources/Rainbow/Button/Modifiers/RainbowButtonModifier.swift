@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  RainbowButtonModifier.swift
+//
 //
 //  Created by Adam Dahan on 2024-06-14.
 //
@@ -26,6 +26,10 @@ struct RainbowButtonModifier: ViewModifier {
     /// The default color of the button.
     var defaultColor: Color = .gray // Set your preferred default color here
     
+    #if os(tvOS)
+    @FocusState private var isFocused: Bool
+    #endif
+
     /// The content view to apply the modifier to.
     ///
     /// - Parameter content: The content view to which the modifier is applied.
@@ -35,7 +39,12 @@ struct RainbowButtonModifier: ViewModifier {
             content
                 .rainbowButtonStyle(configuration: configuration, isLoading: $isLoading)
         }
+        #if os(tvOS)
+        .buttonStyle(RainbowCardButtonFocusedStyle(buttonConfiguration: configuration, isFocused: isFocused))
+        .focused($isFocused)
+        #else
         .buttonStyle(RainbowButtonPressedStyle(buttonConfiguration: configuration))
+        #endif
     }
     
     /// Executes the action associated with the button press, including playing sound and triggering haptic feedback if configured.

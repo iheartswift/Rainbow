@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  RainbowBounceModifier.swift
+//
 //
 //  Created by Adam Dahan on 2024-06-16.
 //

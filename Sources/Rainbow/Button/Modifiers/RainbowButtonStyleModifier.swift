@@ -22,6 +22,11 @@ struct RainbowButtonStyleModifier: ViewModifier {
     
     /// The current index of the border color for the animation.
     @State private var currentIndex = 0
+
+    /// State to track focus on tvOS
+    #if os(tvOS)
+    @FocusState private var isFocused
+    #endif
     
     /// The current border color based on the animation index.
     var currentColor: Color {
@@ -54,6 +59,9 @@ struct RainbowButtonStyleModifier: ViewModifier {
             RainbowLoaderView(configuration: configuration)
                 .tint(configuration.theme.foreground)
                 .opacity(isLoading ? 1.0 : 0.0)
+                #if os(tvOS)
+                .scaleEffect(2.0)
+                #endif
         }
         .underline(configuration.underline, color: RainbowColorTheme.default.foreground)
         .font(configuration.size.font)

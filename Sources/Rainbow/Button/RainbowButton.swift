@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-15.
-//
-
 import SwiftUI
 
 /// A custom button view that applies a rainbow style with configurable options.
@@ -23,6 +16,11 @@ public struct RainbowButton<Content: View>: View {
     
     /// A binding to a Boolean indicating whether the button is loading.
     @Binding var isLoading: Bool
+
+    /// State to track focus on tvOS
+    #if os(tvOS)
+    @FocusState private var isFocused: Bool
+    #endif
 
     /// Initializes a new instance of `RainbowButton`.
     ///
@@ -45,13 +43,18 @@ public struct RainbowButton<Content: View>: View {
 
     /// The body of the button view.
     public var body: some View {
-        Button(action: self.action) {
+        return Button(action: self.action) {
             content
                 .modifier(RainbowButtonStyleModifier(
                     configuration: configuration,
                     isLoading: $isLoading
                 ))
         }
+        #if os(tvOS)
+        .buttonStyle(RainbowCardButtonFocusedStyle(buttonConfiguration: configuration, isFocused: isFocused))
+        .focused($isFocused)
+        #else
         .buttonStyle(RainbowButtonPressedStyle(buttonConfiguration: configuration))
+        #endif
     }
 }

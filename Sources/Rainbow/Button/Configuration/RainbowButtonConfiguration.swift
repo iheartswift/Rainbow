@@ -51,6 +51,9 @@ public struct RainbowButtonConfiguration {
     /// The bounce animation options for the button.
     public var bounce: RainbowBounceAnimationOptions?
     
+    /// The focused values for tvOS
+    public var focused: RainbowFocusedOptions
+    
     /**
      Initializes a new instance of RainbowButtonConfiguration with the specified options.
      
@@ -69,6 +72,7 @@ public struct RainbowButtonConfiguration {
        - sound: The sound options for the button. Default is `nil`.
        - haptic: The haptic options for the button. Default is `nil`.
        - bounce: The bounce animation options for the button. Default is `nil`.
+       - focused: The focus styling options for the button when @FocusState isFocused is true. Default is `nil`
      */
     public init(
         theme: RainbowColorTheme = .primary,
@@ -84,7 +88,8 @@ public struct RainbowButtonConfiguration {
         backgroundGradient: RainbowGradientOptions? = nil,
         sound: RainbowSoundOptions? = nil,
         haptic: RainbowHapticOptions? = nil,
-        bounce: RainbowBounceAnimationOptions? = nil
+        bounce: RainbowBounceAnimationOptions? = nil,
+        focused: RainbowFocusedOptions = RainbowFocusedOptions()
     ) {
         self.theme = theme
         self.font = font
@@ -100,6 +105,7 @@ public struct RainbowButtonConfiguration {
         self.sound = sound
         self.haptic = haptic
         self.bounce = bounce
+        self.focused = focused
     }
     
     /// Inverts the color theme of the button configuration.
@@ -168,6 +174,7 @@ extension RainbowButtonConfiguration {
             .setBorder(RainbowBorderOptions(colors: [backingTheme.foreground], width: 2))
             .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
             .setUnderline(false)
+            .setBounce(.moderate)
             .build()
     }
     
@@ -183,6 +190,7 @@ extension RainbowButtonConfiguration {
     /// The default button configuration.
     public static var `default`: RainbowButtonConfiguration {
        defaultBuilder
+            .setBounce(.moderate)
             .build()
     }
     

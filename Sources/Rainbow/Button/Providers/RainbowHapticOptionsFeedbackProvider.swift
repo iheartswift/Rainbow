@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RainbowHapticOptionsFeedbackProvider.swift
 //  
 //
 //  Created by Adam Dahan on 2024-06-16.

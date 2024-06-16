@@ -48,4 +48,17 @@ public extension View {
     func rainbowBounce(configuration: RainbowButtonConfiguration, isPressed: Bool) -> some View {
         self.modifier(RainbowBounceModifier(configuration: configuration, isPressed: isPressed))
     }
+    
+    /// Applies an animation to the view.
+    ///
+    /// - Parameter animation: The animation to apply to the view.
+    /// - Returns: A view that applies the specified animation.
+    @ViewBuilder
+    func withCustomAnimation(_ animation: Animation? = .default) -> some View {
+        if let animation = animation {
+            self.animation(animation, value: UUID())
+        } else {
+            self
+        }
+    }
 }
