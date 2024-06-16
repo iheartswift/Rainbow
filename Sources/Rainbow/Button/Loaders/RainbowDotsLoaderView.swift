@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RainbowDotsLoaderView.swift
 //  
 //
 //  Created by Adam Dahan on 2024-06-14.
@@ -7,25 +7,17 @@
 
 import SwiftUI
 
-/**
- A view representing a dots loader.
- 
- This view displays a dots loader, with the dots animated in a pulsing manner.
- */
+/// A view representing a dots loader.
+///
+/// This view displays a dots loader, with the dots animated in a pulsing manner.
 struct RainbowDotsLoaderView: View {
-    /**
-     The configuration for the loader.
-     */
+    /// The configuration for the loader.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     A state variable indicating whether the loader is animating.
-     */
+    /// A state variable indicating whether the loader is animating.
     @State private var isAnimating = false
     
-    /**
-     The body of the view.
-     */
+    /// The body of the view.
     var body: some View {
         HStack(spacing: 5) {
             ForEach(0..<3) { index in
@@ -49,6 +41,7 @@ struct RainbowDotsLoaderView: View {
         }
     }
     
+    /// The fill color for the dots.
     private var fillColor: Color {
         let defaultColor = configuration.theme.foreground
         if let contentGradient = configuration.contentGradient {

@@ -7,40 +7,29 @@
 
 import SwiftUI
 
-/**
- A view modifier that applies a rainbow button style to a button.
- 
- This modifier applies a rainbow button style to a button, with a loading indicator and various customizable options.
- */
+/// A view modifier that applies a rainbow button style to a button.
+///
+/// This modifier applies a rainbow button style to a button, with a loading indicator and various customizable options.
 struct RainbowButtonModifier: ViewModifier {
-    /**
-     The configuration for the rainbow button.
-     */
+    /// The configuration for the rainbow button.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     A binding to a Boolean indicating whether the button is loading.
-     */
+    /// A binding to a Boolean indicating whether the button is loading.
     @Binding var isLoading: Bool
     
-    /**
-     The action to perform when the button is pressed.
-     */
+    /// The action to perform when the button is pressed.
     let action: () -> Void
     
-    /**
-     The color when the button is pressed.
-     */
+    /// The color when the button is pressed.
     var pressedColor: Color = .blue // Set your preferred pressed color here
     
-    /**
-     The default color of the button.
-     */
+    /// The default color of the button.
     var defaultColor: Color = .gray // Set your preferred default color here
     
-    /**
-     The content view to apply the modifier to.
-     */
+    /// The content view to apply the modifier to.
+    ///
+    /// - Parameter content: The content view to which the modifier is applied.
+    /// - Returns: A view with the rainbow button style applied.
     func body(content: Content) -> some View {
         Button(action: executeAction) {
             content
@@ -49,6 +38,7 @@ struct RainbowButtonModifier: ViewModifier {
         .buttonStyle(RainbowButtonPressedStyle(buttonConfiguration: configuration))
     }
     
+    /// Executes the action associated with the button press, including playing sound and triggering haptic feedback if configured.
     func executeAction() {
         if let sound = configuration.sound {
             sound.play()

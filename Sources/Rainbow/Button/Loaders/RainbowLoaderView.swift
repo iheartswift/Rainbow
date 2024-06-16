@@ -7,20 +7,14 @@
 
 import SwiftUI
 
-/**
- A view representing a loader.
- 
- This view displays a loader based on the specified loader type.
- */
+/// A view representing a loader.
+///
+/// This view displays a loader based on the specified loader type.
 public struct RainbowLoaderView: View {
-    /**
-     The configuration for the loader.
-     */
+    /// The configuration for the loader.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     The body of the view.
-     */
+    /// The body of the view.
     public var body: some View {
         switch configuration.loaderType {
         case .rainbow:
@@ -34,6 +28,6 @@ public struct RainbowLoaderView: View {
         case .progress:
             ProgressView()
                 .tint(configuration.theme.foreground)
-        }   
+        }
     }
 }

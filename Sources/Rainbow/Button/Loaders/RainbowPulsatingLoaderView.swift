@@ -7,26 +7,18 @@
 
 import SwiftUI
 
-/**
- A view representing a pulsating loader.
- 
- This view displays a pulsating loader, with the circle animated in a pulsing manner.
- */
+/// A view representing a pulsating loader.
+///
+/// This view displays a pulsating loader, with the circle animated in a pulsing manner.
 struct RainbowPulsatingLoaderView: View {
     
-    /**
-     The configuration for the loader.
-     */
+    /// The configuration for the loader.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     A state variable representing the scale of the loader.
-     */
+    /// A state variable representing the scale of the loader.
     @State private var scale: CGFloat = 1.0
     
-    /**
-     The body of the view.
-     */
+    /// The body of the view.
     var body: some View {
         circle
             .frame(width: configuration.size.suggestedHeight, height: configuration.size.suggestedHeight)
@@ -41,6 +33,7 @@ struct RainbowPulsatingLoaderView: View {
             }
     }
     
+    /// A view representing the circle of the loader.
     @ViewBuilder
     var circle: some View {
         if let contentGradient = configuration.contentGradient {
@@ -50,8 +43,7 @@ struct RainbowPulsatingLoaderView: View {
                         colors: contentGradient.colors
                     ),
                     center: .center
-                )
-            )
+                ))
         } else {
             Circle()
                 .fill(configuration.theme.foreground)

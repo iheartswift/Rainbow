@@ -7,17 +7,31 @@
 
 import SwiftUI
 
-/**
- A view modifier that applies a rainbow button style to a view.
- 
- This modifier applies a rainbow button style to a view, with a loading indicator and various customizable options.
- */
+/// A view modifier that applies a rainbow button style to a view.
+///
+/// This modifier applies a rainbow button style to a view, with a loading indicator and various customizable options.
 struct RainbowButtonStyleModifier: ViewModifier {
+    /// The configuration for the rainbow button.
     let configuration: RainbowButtonConfiguration
+    
+    /// A binding to a Boolean indicating whether the button is loading.
     @Binding var isLoading: Bool
 
+    /// A state variable indicating whether the button is pressed.
     @State private var isPressed: Bool = false
+    
+    /// The current index of the border color for the animation.
+    @State private var currentIndex = 0
+    
+    /// The current border color based on the animation index.
+    var currentColor: Color {
+        configuration.border.colors[currentIndex]
+    }
 
+    /// The content view with the applied styles.
+    ///
+    /// - Parameter content: The content view to which the modifier is applied.
+    /// - Returns: A view with the applied content gradient and opacity based on the loading state.
     @ViewBuilder
     func contentView(from content: Content) -> some View {
         if let contentGradient = configuration.contentGradient {
@@ -30,6 +44,10 @@ struct RainbowButtonStyleModifier: ViewModifier {
         }
     }
 
+    /// The body of the view modifier.
+    ///
+    /// - Parameter content: The content view to which the modifier is applied.
+    /// - Returns: A view with the rainbow button style applied.
     func body(content: Content) -> some View {
         ZStack {
             contentView(from: content)
@@ -43,7 +61,8 @@ struct RainbowButtonStyleModifier: ViewModifier {
         .foregroundColor(configuration.theme.foreground)
         .background(
             Group {
-                if configuration.shapeType == .capsule {
+                switch configuration.shapeType {
+                case .capsule:
                     Capsule()
                         .fill(fill(for: configuration))
                         .strokeBorder(
@@ -57,7 +76,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
                                 dash: configuration.border.dashPattern
                             )
                         )
-                } else if configuration.shapeType == .roundedRectangle || configuration.shapeType == .rectangle {
+                case .roundedRectangle, .rectangle:
                     RoundedRectangle(cornerRadius: configuration.cornerRadius)
                         .fill(fill(for: configuration))
                         .strokeBorder(
@@ -71,7 +90,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
                                 dash: configuration.border.dashPattern
                             )
                         )
-                } else if configuration.shapeType == .circle {
+                case .circle:
                     Circle()
                         .fill(fill(for: configuration))
                         .strokeBorder(
@@ -91,6 +110,10 @@ struct RainbowButtonStyleModifier: ViewModifier {
         .shadow(color: configuration.shadow.color, radius: configuration.shadow.radius, x: configuration.shadow.x, y: configuration.shadow.y)
     }
     
+    /// Creates a `StrokeStyle` from the given configuration.
+    ///
+    /// - Parameter configuration: The button configuration.
+    /// - Returns: A `StrokeStyle` based on the configuration.
     private func strokeStyle(from configuration: RainbowButtonConfiguration) -> StrokeStyle {
         StrokeStyle(
             lineWidth: configuration.border.width,
@@ -98,17 +121,23 @@ struct RainbowButtonStyleModifier: ViewModifier {
         )
     }
     
-    private func runAnimation(interval: TimeInterval) -> Void {
+    /// Runs a continuous animation to cycle through the border colors.
+    ///
+    /// - Parameter interval: The time interval for the animation.
+    private func runAnimation(interval: TimeInterval) {
         withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: false)) {
-               () -> Void in
-               Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
-                   withAnimation {
-                       currentIndex = (currentIndex + 1) % configuration.border.colors.count
-                   }
-               }
-           }
+            Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
+                withAnimation {
+                    currentIndex = (currentIndex + 1) % configuration.border.colors.count
+                }
+            }
+        }
     }
     
+    /// Determines the fill style for the button background.
+    ///
+    /// - Parameter configuration: The button configuration.
+    /// - Returns: A `ShapeStyle` for the button background.
     private func fill(for configuration: RainbowButtonConfiguration) -> some ShapeStyle {
         let standardGradient = LinearGradient(
             colors: [configuration.theme.background],
@@ -121,10 +150,5 @@ struct RainbowButtonStyleModifier: ViewModifier {
             endPoint: configuration.backgroundGradient?.endPoint ?? .trailing
         )
         return configuration.backgroundGradient == nil ? standardGradient : backgroundGradient
-    }
-    
-    @State private var currentIndex = 0
-    var currentColor: Color {
-        configuration.border.colors[currentIndex]
     }
 }

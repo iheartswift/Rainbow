@@ -12,14 +12,19 @@ public enum RainbowButtonSize {
     
     /// A small size for the button.
     case small
+    
     /// A medium size for the button.
     case medium
+    
     /// A normal size for the button.
     case normal
+    
     /// A large size for the button.
     case large
+    
     /// An extra large size for the button.
     case extraLarge
+    
     /// A jumbo size for the button.
     case jumbo
     

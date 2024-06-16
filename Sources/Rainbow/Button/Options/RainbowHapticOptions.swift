@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// A struct representing haptic feedback options for a button.
 public struct RainbowHapticOptions {
     
+    /// An enumeration of the different types of haptic feedback.
     public enum HapticType: String, CaseIterable {
         case light
         case medium
@@ -19,12 +21,17 @@ public struct RainbowHapticOptions {
         case error
     }
     
+    /// The selected type of haptic feedback.
     public var selectedHaptic: HapticType?
     
+    /// Initializes a new instance of `RainbowHapticOptions` with the specified haptic type.
+    ///
+    /// - Parameter selectedHaptic: The selected type of haptic feedback. Default is `nil`.
     public init(selectedHaptic: HapticType? = nil) {
         self.selectedHaptic = selectedHaptic
     }
     
+    /// Triggers the haptic feedback based on the selected haptic type.
     public func trigger() {
         guard let selectedHaptic = selectedHaptic else { return }
         switch selectedHaptic {

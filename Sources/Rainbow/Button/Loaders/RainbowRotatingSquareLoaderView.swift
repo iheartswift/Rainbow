@@ -7,25 +7,17 @@
 
 import SwiftUI
 
-/**
- A view representing a rotating square loader.
- 
- This view displays a rotating square loader, with the square animated in a rotating manner.
- */
+/// A view representing a rotating square loader.
+///
+/// This view displays a rotating square loader, with the square animated in a rotating manner.
 struct RainbowRotatingSquareLoaderView: View {
-    /**
-     The configuration for the loader.
-     */
+    /// The configuration for the loader.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     A state variable indicating whether the loader is animating.
-     */
+    /// A state variable indicating whether the loader is animating.
     @State private var isAnimating: Bool = false
     
-    /**
-     The body of the view.
-     */
+    /// The body of the view.
     var body: some View {
         rectangle
             .frame(width: configuration.size.suggestedHeight, height: configuration.size.suggestedHeight)
@@ -40,6 +32,7 @@ struct RainbowRotatingSquareLoaderView: View {
             }
     }
     
+    /// A view representing the rotating rectangle of the loader.
     @ViewBuilder
     var rectangle: some View {
         if let contentGradient = configuration.contentGradient {
@@ -49,8 +42,7 @@ struct RainbowRotatingSquareLoaderView: View {
                         colors: contentGradient.colors
                     ),
                     center: .center
-                )
-            )
+                ))
         } else {
             Rectangle()
                 .fill(configuration.theme.foreground)

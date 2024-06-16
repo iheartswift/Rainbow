@@ -7,8 +7,10 @@
 
 import AVFoundation
 
+/// A struct representing options for rainbow sound effects.
 public struct RainbowSoundOptions {
     
+    /// An enumeration of the different system sounds available.
     public enum SystemSound: String, CaseIterable {
         case tap
         case click
@@ -16,12 +18,17 @@ public struct RainbowSoundOptions {
         // Add more system sounds as needed
     }
     
+    /// The selected system sound to play.
     public var selectedSound: SystemSound?
     
+    /// Initializes a new instance of `RainbowSoundOptions` with the specified sound.
+    ///
+    /// - Parameter selectedSound: The selected system sound. Default is `nil`.
     public init(selectedSound: SystemSound? = nil) {
         self.selectedSound = selectedSound
     }
     
+    /// Plays the selected system sound.
     public func play() {
         guard let selectedSound = selectedSound else { return }
         let systemSoundID: SystemSoundID

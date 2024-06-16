@@ -7,25 +7,17 @@
 
 import SwiftUI
 
-/**
- A view representing a rainbow style loader.
- 
- This view displays a rainbow style loader, with the circle animated in a rotating manner.
- */
+/// A view representing a rainbow style loader.
+///
+/// This view displays a rainbow style loader, with the circle animated in a rotating manner.
 struct RainbowStyleLoaderView: View {
-    /**
-     The configuration for the loader.
-     */
+    /// The configuration for the loader.
     let configuration: RainbowButtonConfiguration
     
-    /**
-     A state variable indicating whether the loader is animating.
-     */
+    /// A state variable indicating whether the loader is animating.
     @State private var isAnimating: Bool = false
     
-    /**
-     The body of the view.
-     */
+    /// The body of the view.
     var body: some View {
         Circle()
             .trim(from: 0.0, to: 0.6)
@@ -53,9 +45,9 @@ struct RainbowStyleLoaderView: View {
                     self.isAnimating = true
                 }
             }
-
     }
     
+    /// The colors to be used in the loader.
     @ViewBuilder
     var colors: [Color] {
         if let contentGradient = configuration.contentGradient {

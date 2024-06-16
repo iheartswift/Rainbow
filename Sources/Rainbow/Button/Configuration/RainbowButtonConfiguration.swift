@@ -10,74 +10,46 @@ import UIKit
 
 public struct RainbowButtonConfiguration {
     
-    /**
-     The color theme of the button.
-     */
+    /// The color theme of the button.
     public var theme: RainbowColorTheme
     
-    /**
-     The font of the button.
-     */
+    /// The font of the button.
     public var font: Font?
     
-    /**
-     The border options of the button.
-     */
+    /// The border options of the button.
     public var border: RainbowBorderOptions
     
-    /**
-     The shadow options of the button.
-     */
+    /// The shadow options of the button.
     public var shadow: RainbowShadowOptions
     
-    /**
-     The corner radius of the button.
-     */
+    /// The corner radius of the button.
     public var cornerRadius: CGFloat
     
-    /**
-     A Boolean indicating whether the button should have an underline.
-     */
+    /// A Boolean indicating whether the button should have an underline.
     public var underline: Bool
     
-    /**
-     The size of the button.
-     */
+    /// The size of the button.
     public var size: RainbowButtonSize
     
-    /**
-     A Boolean indicating whether the button should use a capsule shape.
-     */
+    /// A Boolean indicating whether the button should use a capsule shape.
     public var shapeType: RainbowButtonShapeType
     
-    /**
-     The type of loader to display.
-     */
+    /// The type of loader to display.
     public var loaderType: RainbowLoaderType
     
-    /**
-     The gradient to apply to the content (text and icon).
-     */
+    /// The gradient to apply to the content (text and icon).
     public var contentGradient: RainbowGradientOptions?
     
-    /**
-     The gradient to apply to the background.
-     */
+    /// The gradient to apply to the background.
     public var backgroundGradient: RainbowGradientOptions?
     
-    /**
-     The sound options for the button.
-     */
+    /// The sound options for the button.
     public var sound: RainbowSoundOptions?
     
-    /**
-     The haptic options for the button.
-     */
+    /// The haptic options for the button.
     public var haptic: RainbowHapticOptions?
     
-    /**
-     The buttons bounce options
-     */
+    /// The bounce animation options for the button.
     public var bounce: RainbowBounceAnimationOptions?
     
     /**
@@ -91,13 +63,13 @@ public struct RainbowButtonConfiguration {
        - cornerRadius: The corner radius of the button. Default is `8`.
        - underline: A Boolean indicating whether the button should have an underline. Default is `false`.
        - size: The size of the button. Default is `.normal`.
-       - useCapsuleShape: A Boolean indicating whether the button should use a capsule shape. Default is `false`.
+       - shapeType: A Boolean indicating whether the button should use a capsule shape. Default is `.roundedRectangle`.
        - loaderType: The kind of loader to display if @State variable isLoading is active. Default is `.progress`.
        - contentGradient: The gradient to apply to the content (text and icon). Default is `nil`.
        - backgroundGradient: The gradient to apply to the background. Default is `nil`.
        - sound: The sound options for the button. Default is `nil`.
        - haptic: The haptic options for the button. Default is `nil`.
-       - bounce: The bounce animation options for the button: Default is `nil`
+       - bounce: The bounce animation options for the button. Default is `nil`.
      */
     public init(
         theme: RainbowColorTheme = .primary,
@@ -131,18 +103,17 @@ public struct RainbowButtonConfiguration {
         self.bounce = bounce
     }
     
+    /// Inverts the color theme of the button configuration.
+    /// - Returns: A new instance of `RainbowButtonConfiguration` with the inverted color theme.
     public func invertTheme() -> RainbowButtonConfiguration {
         var c = self
         c.theme = c.theme.inverted()
         return c
     }
     
-    public func capsule() -> RainbowButtonConfiguration {
-        var c = self
-        c.shapeType = RainbowButtonShapeType.capsule
-        return c
-    }
-    
+    /// Updates the size of the button.
+    /// - Parameter size: The new size for the button.
+    /// - Returns: A new instance of `RainbowButtonConfiguration` with the updated size.
     public func update(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
         var c = self
         c.size = size
@@ -150,17 +121,23 @@ public struct RainbowButtonConfiguration {
     }
 }
 
-
 extension RainbowButtonConfiguration {
 
+    /// The default corner radius for the button.
     public static var defaultCornerRadius: CGFloat = 8.0
 }
 
-/**
- Extensions to the RainbowButtonConfiguration type to provide various pre-defined configurations.
- */
+/// Extensions to the `RainbowButtonConfiguration` type to provide various pre-defined configurations.
 extension RainbowButtonConfiguration {
     
+    /// Creates a `RainbowButtonConfiguration` with a rainbow theme.
+    ///
+    /// - Parameters:
+    ///   - shapeType: The shape type of the button.
+    ///   - colors: The colors to use for the rainbow effect. Default is `[.yellow, .green, .blue, .red, .purple, .orange]`.
+    ///   - borderWidth: The width of the button's border. Default is `5.0`.
+    ///   - animationInterval: The interval for the border animation. Default is `0.5`.
+    /// - Returns: A `RainbowButtonConfiguration` with the specified rainbow theme.
     public static func rainbow(
         shapeType: RainbowButtonShapeType,
         colors: [Color] = [.yellow, .green, .blue, .red, .purple, .orange],
@@ -181,12 +158,10 @@ extension RainbowButtonConfiguration {
             .build()
     }
     
-    /**
-     Creates an outlined button configuration with the specified theme.
-     
-     - Parameter theme: The theme for the outlined button.
-     - Returns: An outlined button configuration with the specified theme.
-     */
+    /// Creates an outlined button configuration with the specified theme.
+    ///
+    /// - Parameter theme: The theme for the outlined button.
+    /// - Returns: An outlined button configuration with the specified theme.
     public static func outlined(_ theme: RainbowColorTheme) -> RainbowButtonConfiguration {
         let backingTheme = RainbowColorTheme.outlined(theme: theme)
         return RainbowButtonConfigurationBuilder()
@@ -197,6 +172,7 @@ extension RainbowButtonConfiguration {
             .build()
     }
     
+    /// A default builder for `RainbowButtonConfiguration`.
     public static var defaultBuilder: RainbowButtonConfigurationBuilder {
         RainbowButtonConfigurationBuilder()
             .setTheme(.default)
@@ -205,20 +181,29 @@ extension RainbowButtonConfiguration {
             .setBorder(RainbowBorderOptions(colors: [Color(UIColor.label).opacity(0.2)], width: 1.0))
     }
     
-    /**
-     The default button configuration.
-     */
+    /// The default button configuration.
     public static var `default`: RainbowButtonConfiguration {
        defaultBuilder
             .build()
     }
     
+    /// Creates a default button configuration with the specified size.
+    ///
+    /// - Parameter size: The size of the button.
+    /// - Returns: A default button configuration with the specified size.
     public static func defaultButton(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
         defaultBuilder
             .setSize(size)
             .build()
     }
     
+    /// Creates a button configuration with the specified parameters.
+    ///
+    /// - Parameters:
+    ///   - configuration: The base configuration for the button.
+    ///   - shape: The shape type of the button.
+    ///   - size: The size of the button. Default is `.extraLarge`.
+    /// - Returns: A button configuration with the specified parameters.
     public static func button(
         _ configuration: RainbowButtonConfiguration,
         _ shape: RainbowButtonShapeType,
@@ -230,9 +215,7 @@ extension RainbowButtonConfiguration {
         return c
     }
     
-    /**
-     Various pre-defined button configurations.
-     */
+    /// Various pre-defined button configurations.
     public static var white: RainbowButtonConfiguration {
         RainbowButtonConfigurationBuilder()
             .setTheme(.white)

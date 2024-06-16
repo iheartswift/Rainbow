@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-/// A ViewModifier that applies a bounce effect using a spring animation.
+/// A `ViewModifier` that applies a bounce effect using a spring animation.
 public struct RainbowBounceModifier: ViewModifier {
     
+    /// The configuration for the button.
     var configuration: RainbowButtonConfiguration
+    
+    /// A Boolean value indicating whether the view is pressed.
     var isPressed: Bool
     
+    /// The body of the view.
+    ///
+    /// - Parameter content: The content view to which the modifier is applied.
+    /// - Returns: A view with the bounce effect applied if configured.
     public func body(content: Content) -> some View {
         if let b = configuration.bounce {
             content
