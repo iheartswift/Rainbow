@@ -46,7 +46,10 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 
 ## Starter code
 
-At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the examples repository linked above. There are many pre-configured buttons that you can use and here are some code samples of how to use them: 
+There are two kinds of ways you can implement buttons: 
+
+       1. As a button
+       2. As a modifier
 
 ### Button
 ```swift
@@ -65,6 +68,34 @@ Text("Sign in")
         // sign the user in
     }
 ```
+
+# Technical Details
+
+At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from and here are some code samples of how to use them: 
+
+### Circle Buttons
+
+These buttons leverage the `Circle()` shape in SwiftUI and can be built in a variaty of ways as you can see below.
+
+![](https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+10.38.14%E2%80%AFAM.png)
+
+<br />
+
+Using the pre-built configuration, you can make any pre-built button become a circle: 
+```swift
+Image(systemName: "heart")
+    .rainbowButton(.button(.outlined(.primary), .circle)) {
+        print("Primary button tapped")
+    }
+```
+<br />
+
+Breaking down the example: 
+
+| SwiftUI                      | Modifier       | Pre-built Function | Configuration       | Shape |
+|:-----------------------------|:---------------|:----------------|:--------------------|:------|
+| Image(systemName: "heart")   | .rainbowButton | .button         | .outlined(.primary) | .circle |
+
 
 ### Custom 
 ```swift
