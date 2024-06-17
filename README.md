@@ -14,7 +14,7 @@ Welcome to the Rainbow Button Library! This library provides a vibrant and custo
 To install Rainbow UI Library, add the following dependency to your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
+.package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.5")
 ```
 <br />
 
