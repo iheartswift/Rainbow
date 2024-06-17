@@ -174,6 +174,23 @@ RainbowButtonConfigurationBuilder()
 # Button Sizes
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.37.22%E2%80%AFPM.png" height="120">
 
+| Size        | Description                             |
+|-------------|-----------------------------------------|
+| `small`     | A small size for the button.            |
+| `medium`    | A medium size for the button.           |
+| `normal`    | A normal size for the button.           |
+| `large`     | A large size for the button.            |
+| `extraLarge`| An extra large size for the button.     |
+| `jumbo`     | A jumbo size for the button.            |
+
+##### Example 
+```swift
+Text("Small")
+    .rainbowButton(.configure(.default, .capsule, .small)) { // Change .small with any size
+        print("Primary button tapped")
+    }
+```
+
 <br />
 
 ## Starter code
