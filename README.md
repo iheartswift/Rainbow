@@ -130,10 +130,13 @@ You can try these configurations out in the [examples repository](https://github
 
 ##### Example code
 ```swift
-Text("🌈 Rainbow Button")
-  .font(.largeTitle)
-  .padding(20)
-  .rainbowButton(.rainbow(shapeType: .capsule, colors: [
+VStack {
+    Image(systemName: "heart")
+    Text("iHeartSwift")
+}
+.font(.largeTitle)
+.padding(20)
+.rainbowButton(.rainbow(shapeType: .capsule, colors: [
       Color(red: 0.87, green: 0.29, blue: 0.61),
       Color(red: 0.98, green: 0.42, blue: 0.41),
       Color(red: 0.99, green: 0.75, blue: 0.29)
