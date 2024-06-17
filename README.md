@@ -45,8 +45,17 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 
 At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the examples repository linked above. There are many pre-configured buttons that you can use and here are some code samples of how to use them: 
 
-### Using the Rainbow button modifier
+### Button
+```swift
+RainbowButton(action: {
+       // sign in the user in
+   },
+   content: Text("Sign in"),
+   configuration: .primary
+)
+```
 
+### Modifier
 ```swift
 Text("Sign in")
     .rainbowButton(.primary) {
