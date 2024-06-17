@@ -1,5 +1,5 @@
 # 🌈 Rainbow
-Welcome to the Rainbow UI Library! This library provides a vibrant and customizable set of button configurations to enhance your SwiftUI applications. Whether you need buttons, loaders, or gradients, Rainbow UI has you covered with beautiful and interactive elements.
+Welcome to the Rainbow Button Library! This library provides a vibrant and customizable set of button configurations to enhance your SwiftUI applications. Rainbow buttons are multiplatform by default and support platform native features like haptics, sound on iOS 📱 and focused states on Apple 📺.
 
 ![iOS](https://img.shields.io/badge/iOS-17.0+-blue)
 ![macOS](https://img.shields.io/badge/macOS-14.0+-blue)
@@ -14,10 +14,6 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 ```swift
 .package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
 ```
-
-## Sample Projects
-
-Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
 
 ## Features
 
@@ -34,10 +30,6 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 - [x] Custom loaders
 - [x] And More...
 
-## Requirements
-
-* Xcode 15.0+
-
 ## Multiplatform
 
 | iOS | macOS | watchOS | tvOS |
@@ -46,70 +38,100 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 
 # Technical Details
 
-At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from and here are some code samples of how to use them: 
+At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from: 
 
-### Circle Buttons
+## Pre-built configurations
 
-These buttons leverage the `Circle()` shape in SwiftUI and can be built in a variaty of ways as you can see below.
+You can try these configurations out in the [examples repository](https://github.com/iheartswift/Examples) in the **Rainbow-Button-Examples** project.
 
-![](https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+10.38.14%E2%80%AFAM.png)
+
+### Basic Configurations
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+11.17.37%E2%80%AFAM.png" height="80">
+
+
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `default`           | The default button configuration with moderate bounce.                                                 |
+| `white`             | A pre-defined button configuration with a white theme.                                                 |
+| `light`             | A pre-defined button configuration with a light theme.                                                 |
+| `dark`              | A pre-defined button configuration with a dark theme.                                                  |
+| `black`             | A pre-defined button configuration with a black theme.                                                 |
+| `text`              | A pre-defined button configuration with a text theme and underline.                                     |
+| `ghost`             | A pre-defined button configuration with a ghost theme.                                                 |
 
 <br />
 
-Using the pre-built configuration, you can make any pre-built button become a circle: 
-```swift
-Image(systemName: "heart")
-    .rainbowButton(.button(.outlined(.primary), .circle)) {
-        print("Primary button tapped")
-    }
-```
-<br />
+### Light / Darkmode Configurations
 
-Breaking down the example: 
+![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-6-948dd91663.gif)
 
-| SwiftUI                      | Modifier       | Pre-built Function | Configuration       | Shape |
-|:-----------------------------|:---------------|:----------------|:--------------------|:------|
-| Image(systemName: "heart")   | .rainbowButton | .button         | .outlined(.primary) | .circle |
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `primary`           | A pre-defined button configuration with a primary theme.                                               |
+| `link`              | A pre-defined button configuration with a link theme.                                                  |
+| `info`              | A pre-defined button configuration with an info theme.                                                 |
+| `success`           | A pre-defined button configuration with a success theme.                                               |
+| `warning`           | A pre-defined button configuration with a warning theme.                                               |
+| `danger`            | A pre-defined button configuration with a danger theme.                                                |
+
+### Outlined Configurations
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.04.52%E2%80%AFPM.png" height="80">
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.03.58%E2%80%AFPM.png" height="80">
 
 
-### Custom 
-```swift
-struct ContentView: View {
-    
-    var customConfig: RainbowButtonConfiguration {
-        return RainbowButtonConfigurationBuilder()
-            .setShape(type: .capsule)
-            .setLoader(.rainbow)
-            .setBorder(RainbowBorderOptions(
-                    colors: [
-                        .blue,
-                        .yellow,
-                        .green,
-                        .orange
-                    ],
-                    width: 5.0,
-                    dashPattern: [10]
-                )
-            )
-            .setContentGradient(RainbowGradientOptions(colors: [
-                    .blue,
-                    .yellow,
-                    .green,
-                    .orange
-                ])
-            )
-            .setSize(.jumbo)
-            .build()
-    }
-    
-    var body: some View {
-        Text("Custom Button")
-            .rainbowButton(customConfig) {
-                // Do something
-            }
-    }
-}
-```
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `outlined`          | Creates an outlined button configuration with the specified theme.                                      |
+
+
+## Inverted Configurations
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.07.14%E2%80%AFPM.png" height="80">
+
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `primaryInverted`   | A pre-defined button configuration with an inverted primary theme and large title font.                |
+| `linkInverted`      | A pre-defined button configuration with an inverted link theme.                                        |
+| `infoInverted`      | A pre-defined button configuration with an inverted info theme.                                        |
+| `successInverted`   | A pre-defined button configuration with an inverted success theme.                                     |
+| `warningInverted`   | A pre-defined button configuration with an inverted warning theme.                                     |
+| `dangerInverted`    | A pre-defined button configuration with an inverted danger theme.                                      |
+
+
+### Light Configurations
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.09.40%E2%80%AFPM.png" height="80">
+
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `primaryLight`      | A pre-defined button configuration with a light primary theme.                                         |
+| `linkLight`         | A pre-defined button configuration with a light link theme.                                            |
+| `infoLight`         | A pre-defined button configuration with a light info theme.                                            |
+| `successLight`      | A pre-defined button configuration with a light success theme.                                         |
+| `warningLight`      | A pre-defined button configuration with a light warning theme.                                         |
+| `dangerLight`       | A pre-defined button configuration with a light danger theme.                                          |
+
+### Rainbow (Gradient) Configurations
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.14.45%E2%80%AFPM.png" height="100">
+
+
+| Configuration       | Description                                                                                           |
+|---------------------|-------------------------------------------------------------------------------------------------------|
+| `rainbow`           | Creates a button with a rainbow theme, customizable shape, colors, border width, and animation interval. |
+
+
+
+# Button Shapes 
+
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.32.53%E2%80%AFPM.png" height="200">
+
+
+# Button Sizes
+<img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.37.22%E2%80%AFPM.png" height="120">
+
 
 ## Starter code
 
@@ -135,3 +157,7 @@ Text("Sign in")
         // sign the user in
     }
 ```
+
+## Sample Projects
+
+Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
