@@ -128,6 +128,15 @@ You can try these configurations out in the [examples repository](https://github
 |---------------------|-------------------------------------------------------------------------------------------------------|
 | `rainbow`           | Creates a button with a rainbow theme, customizable shape, colors, border width, and animation interval. |
 
+##### Example code
+```swift
+Text("🌈 Rainbow Button")
+  .font(.largeTitle)
+  .padding(20)
+  .rainbowButton(.rainbow(shapeType: .capsule, colors: [.red, .green, .blue])) {
+      // Do something
+  }
+```
 
 <br />
 
