@@ -11,9 +11,6 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 
 ## Platform Support
 
-| Platform | Gif  |
-|----------|------------|
-| iOS      | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) |
-| macOS    | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif)|
-| watchOS  | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif)|
-| tvOS     | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif)|
+| iOS | macOS | watchOS | tvOS |
+|-----|-------|---------|------|
+| ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
