@@ -40,3 +40,16 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
 | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
+
+## Starter code
+
+At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the examples repository linked above. There are many pre-configured buttons that you can use and here are some code samples of how to use them: 
+
+### Using the Rainbow button modifier
+
+```swift
+Text("Sign in")
+    .rainbowButton(.primary) {
+        // sign the user in
+    }
+```
