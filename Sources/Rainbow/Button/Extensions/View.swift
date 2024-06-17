@@ -29,26 +29,6 @@ public extension View {
         return self.modifier(RainbowButtonModifier(configuration: configuration, isLoading: isLoading, action: action))
     }
     
-    /// Applies a rainbow button style to the view.
-    ///
-    /// - Parameters:
-    ///   - configuration: The configuration for the rainbow button.
-    ///   - isLoading: A binding to a Boolean indicating whether the button is loading.
-    /// - Returns: A view with the rainbow button style applied.
-    func rainbowButtonStyle(configuration: RainbowButtonConfiguration, isLoading: Binding<Bool>) -> some View {
-        self.modifier(RainbowButtonStyleModifier(configuration: configuration, isLoading: isLoading))
-    }
-    
-    /// Applies the `RainbowBounceModifier` to a view.
-    ///
-    /// - Parameters:
-    ///   - configuration: The configuration for the bounce animation.
-    ///   - isPressed: A Boolean value indicating whether the view is pressed.
-    /// - Returns: A view modified with the bounce effect.
-    func rainbowBounce(configuration: RainbowButtonConfiguration, isPressed: Bool) -> some View {
-        self.modifier(RainbowBounceModifier(configuration: configuration, isPressed: isPressed))
-    }
-    
     /// Applies an animation to the view.
     ///
     /// - Parameter animation: The animation to apply to the view.

@@ -58,3 +58,16 @@ struct RainbowButtonModifier: ViewModifier {
         action()
     }
 }
+
+private extension View {
+    
+    /// Applies a rainbow button style to the view.
+    ///
+    /// - Parameters:
+    ///   - configuration: The configuration for the rainbow button.
+    ///   - isLoading: A binding to a Boolean indicating whether the button is loading.
+    /// - Returns: A view with the rainbow button style applied.
+    func rainbowButtonStyle(configuration: RainbowButtonConfiguration, isLoading: Binding<Bool>) -> some View {
+        self.modifier(RainbowButtonStyleModifier(configuration: configuration, isLoading: isLoading))
+    }
+}

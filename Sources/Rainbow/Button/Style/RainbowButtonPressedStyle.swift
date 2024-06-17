@@ -62,3 +62,16 @@ public struct RainbowButtonPressedStyle: ButtonStyle {
         }
     }
 }
+
+private extension View {
+    
+    /// Applies the `RainbowBounceModifier` to a view.
+    ///
+    /// - Parameters:
+    ///   - configuration: The configuration for the bounce animation.
+    ///   - isPressed: A Boolean value indicating whether the view is pressed.
+    /// - Returns: A view modified with the bounce effect.
+    func rainbowBounce(configuration: RainbowButtonConfiguration, isPressed: Bool) -> some View {
+        self.modifier(RainbowBounceModifier(configuration: configuration, isPressed: isPressed))
+    }
+}
