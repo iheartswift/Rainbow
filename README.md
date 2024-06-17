@@ -15,12 +15,28 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 .package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
 ```
 
+## Sample Projects
+
+Take a look at [Example Projects](https://github.com/iheartswift/Examples) to get your projects started.
+
+## Features
+
+- [x] Completely Customizable
+- [x] Rectangle Buttons
+- [x] Capsule Buttons
+- [x] Cirle Buttons
+- [x] RoundedRectangle Buttons
+- [x] Custom borders
+- [x] Custom gradients
+- [x] Custom loaders
+- [x] And More...
+
+## Requirements
+
+* Xcode 15.0+
+
 ## Multiplatform
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
 | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
-
-## Sample Projects
-
-Take a look at [Example Projects](https://github.com/iheartswift/Examples) to get your projects started.
