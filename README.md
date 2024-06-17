@@ -15,7 +15,7 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 .package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
 ```
 
-## Multiplatform Support
+## Multiplatform
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
