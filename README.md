@@ -7,6 +7,7 @@ Welcome to the Rainbow Button Library! This library provides a vibrant and custo
 ![tvOS](https://img.shields.io/badge/tvOS-17.0+-blue)
 ![SwiftPM](https://img.shields.io/badge/SwiftPM-compatible-brightgreen)
 
+<br />
 ## 📦 Installation
 
 To install Rainbow UI Library, add the following dependency to your `Package.swift` file:
@@ -14,7 +15,7 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 ```swift
 .package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
 ```
-
+<br />
 ## Features
 
 - [x] Completely Customizable
@@ -30,25 +31,26 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 - [x] Custom loaders
 - [x] And More...
 
+<br />
 ## Multiplatform
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
 | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
 
+<br />
 # Technical Details
 
 At the ❤️ of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from: 
 
+<br />
 ## Pre-built configurations
 
 You can try these configurations out in the [examples repository](https://github.com/iheartswift/Examples) in the **Rainbow-Button-Examples** project.
 
-
+<br />
 ### Basic Configurations
-
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+11.17.37%E2%80%AFAM.png" height="80">
-
 
 | Configuration       | Description                                                                                           |
 |---------------------|-------------------------------------------------------------------------------------------------------|
@@ -61,9 +63,7 @@ You can try these configurations out in the [examples repository](https://github
 | `ghost`             | A pre-defined button configuration with a ghost theme.                                                 |
 
 <br />
-
 ### Light / Darkmode Configurations
-
 ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-6-948dd91663.gif)
 
 | Configuration       | Description                                                                                           |
@@ -75,19 +75,19 @@ You can try these configurations out in the [examples repository](https://github
 | `warning`           | A pre-defined button configuration with a warning theme.                                               |
 | `danger`            | A pre-defined button configuration with a danger theme.                                                |
 
+<br />
 ### Outlined Configurations
 
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.04.52%E2%80%AFPM.png" height="80">
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.03.58%E2%80%AFPM.png" height="80">
-
 
 | Configuration       | Description                                                                                           |
 |---------------------|-------------------------------------------------------------------------------------------------------|
 | `outlined`          | Creates an outlined button configuration with the specified theme.                                      |
 
 
-## Inverted Configurations
-
+<br />
+### Inverted Configurations
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.07.14%E2%80%AFPM.png" height="80">
 
 | Configuration       | Description                                                                                           |
@@ -99,9 +99,8 @@ You can try these configurations out in the [examples repository](https://github
 | `warningInverted`   | A pre-defined button configuration with an inverted warning theme.                                     |
 | `dangerInverted`    | A pre-defined button configuration with an inverted danger theme.                                      |
 
-
+<br />
 ### Light Configurations
-
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.09.40%E2%80%AFPM.png" height="80">
 
 | Configuration       | Description                                                                                           |
@@ -114,7 +113,6 @@ You can try these configurations out in the [examples repository](https://github
 | `dangerLight`       | A pre-defined button configuration with a light danger theme.                                          |
 
 ### Rainbow (Gradient) Configurations
-
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.14.45%E2%80%AFPM.png" height="100">
 
 
@@ -125,7 +123,6 @@ You can try these configurations out in the [examples repository](https://github
 
 
 # Button Shapes 
-
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.32.53%E2%80%AFPM.png" height="200">
 
 
