@@ -137,12 +137,12 @@ VStack {
 .font(.largeTitle)
 .padding(20)
 .rainbowButton(.rainbow(shapeType: .capsule, colors: [
-      Color(red: 0.87, green: 0.29, blue: 0.61),
-      Color(red: 0.98, green: 0.42, blue: 0.41),
-      Color(red: 0.99, green: 0.75, blue: 0.29)
-  ])) {
-      // Do something
-  }
+  Color(red: 0.87, green: 0.29, blue: 0.61),
+  Color(red: 0.98, green: 0.42, blue: 0.41),
+  Color(red: 0.99, green: 0.75, blue: 0.29)
+])) {
+  // Do something
+}
 ```
 
 <br />
@@ -153,13 +153,13 @@ VStack {
 A custom static configuration is available that makes it east to set the shape:
 ```swift
 VStack {
-      Image(systemName: "heart")
-      Text("Sign in")
-  }
-  .padding()
-  .rainbowButton(.configure(.default, .circle)) {  // Notice the .circle being passed as the shape
-     // Do something   
-  }
+   Image(systemName: "heart")
+   Text("Sign in")
+}
+.padding()
+.rainbowButton(.configure(.default, .circle)) {  // Notice the .circle being passed as the shape
+ // Do something   
+}
 ```
 
 For custom button implementations the configuration **builder** should be utilized
@@ -201,5 +201,4 @@ Text("Sign in")
 <br />
 
 ## Sample Projects
-
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
