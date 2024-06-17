@@ -173,7 +173,6 @@ RainbowButtonConfigurationBuilder()
 
 # Button Sizes
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.37.22%E2%80%AFPM.png" height="120">
-
 | Size        | Description                             |
 |-------------|-----------------------------------------|
 | `small`     | A small size for the button.            |
