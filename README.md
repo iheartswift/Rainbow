@@ -1,6 +1,12 @@
 # 🌈 Rainbow
 Welcome to the Rainbow UI Library! This library provides a vibrant and customizable set of button configurations to enhance your SwiftUI applications. Whether you need buttons, loaders, or gradients, Rainbow UI has you covered with beautiful and interactive elements.
 
+![iOS](https://img.shields.io/badge/iOS-17.0+-blue)
+![macOS](https://img.shields.io/badge/macOS-14.0+-blue)
+![watchOS](https://img.shields.io/badge/watchOS-10.0+-blue)
+![tvOS](https://img.shields.io/badge/tvOS-17.0+-blue)
+![SwiftPM](https://img.shields.io/badge/SwiftPM-compatible-brightgreen)
+
 ## 📦 Installation
 
 To install Rainbow UI Library, add the following dependency to your `Package.swift` file:
@@ -9,7 +15,7 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 .package(url: "https://github.com/iheartswift/Rainbow.git", from: "1.0.4")
 ```
 
-## Platform Support
+## Multiplatform Support
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
