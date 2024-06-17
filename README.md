@@ -143,22 +143,19 @@ You can try these configurations out in the [examples repository](https://github
 
 ## Starter code
 
-There are two kinds of ways you can implement buttons: 
+There are two kinds of ways you can implement rainbow buttons: 
 
-       1. As a button
-       2. As a modifier
+       1. RainbowButton struct
+       2. .rainbowButton modifier
 
-### Button
+### 1. RainbowButton
 ```swift
 RainbowButton(action: {
-       // sign in the user in
-   },
-   content: Text("Sign in"),
-   configuration: .primary
-)
+       // Do something
+}, Text("Sign in"), .configure(.default, .rectangle))
 ```
 
-### Modifier
+### 2. Modifier
 ```swift
 Text("Sign in")
     .rainbowButton(.primary) {
