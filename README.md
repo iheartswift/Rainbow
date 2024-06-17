@@ -26,6 +26,9 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 - [x] Capsule Buttons
 - [x] Cirle Buttons
 - [x] RoundedRectangle Buttons
+- [x] Sound (iOS, macOS, watchOS)
+- [x] Haptics (iOS, watchOS)
+- [x] Darkmode (few pre-build configurations support darkmode)   
 - [x] Custom borders
 - [x] Custom gradients
 - [x] Custom loaders
@@ -61,4 +64,43 @@ Text("Sign in")
     .rainbowButton(.primary) {
         // sign the user in
     }
+```
+
+### Custom 
+```swift
+struct ContentView: View {
+    
+    var customConfig: RainbowButtonConfiguration {
+        return RainbowButtonConfigurationBuilder()
+            .setShape(type: .capsule)
+            .setLoader(.rainbow)
+            .setBorder(RainbowBorderOptions(
+                    colors: [
+                        .blue,
+                        .yellow,
+                        .green,
+                        .orange
+                    ],
+                    width: 5.0,
+                    dashPattern: [10]
+                )
+            )
+            .setContentGradient(RainbowGradientOptions(colors: [
+                    .blue,
+                    .yellow,
+                    .green,
+                    .orange
+                ])
+            )
+            .setSize(.jumbo)
+            .build()
+    }
+    
+    var body: some View {
+        Text("Custom Button")
+            .rainbowButton(customConfig) {
+                // Do something
+            }
+    }
+}
 ```
