@@ -134,6 +134,25 @@ You can try these configurations out in the [examples repository](https://github
 # Button Shapes 
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.32.53%E2%80%AFPM.png" height="200">
 
+A custom static configuration is available that makes it east to set the shape:
+```swift
+VStack {
+      Image(systemName: "heart")
+      Text("Sign in")
+  }
+  .padding()
+  .rainbowButton(.configure(.default, .circle)) {  // Notice the .circle being passed as the shape
+     // Do something   
+  }
+```
+
+For custom button implementations the configuration **builder** should be utilized
+```swift
+RainbowButtonConfigurationBuilder()
+     .setShape(type: .circle)
+     .build()
+```
+
 <br />
 
 # Button Sizes
@@ -159,7 +178,7 @@ RainbowButton(action: {
 ```swift
 Text("Sign in")
     .rainbowButton(.primary) {
-        // sign the user in
+        // Do something
     }
 ```
 
