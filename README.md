@@ -44,31 +44,6 @@ Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rai
 |-----|-------|---------|------|
 | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
 
-## Starter code
-
-There are two kinds of ways you can implement buttons: 
-
-       1. As a button
-       2. As a modifier
-
-### Button
-```swift
-RainbowButton(action: {
-       // sign in the user in
-   },
-   content: Text("Sign in"),
-   configuration: .primary
-)
-```
-
-### Modifier
-```swift
-Text("Sign in")
-    .rainbowButton(.primary) {
-        // sign the user in
-    }
-```
-
 # Technical Details
 
 At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from and here are some code samples of how to use them: 
@@ -134,4 +109,29 @@ struct ContentView: View {
             }
     }
 }
+```
+
+## Starter code
+
+There are two kinds of ways you can implement buttons: 
+
+       1. As a button
+       2. As a modifier
+
+### Button
+```swift
+RainbowButton(action: {
+       // sign in the user in
+   },
+   content: Text("Sign in"),
+   configuration: .primary
+)
+```
+
+### Modifier
+```swift
+Text("Sign in")
+    .rainbowButton(.primary) {
+        // sign the user in
+    }
 ```
