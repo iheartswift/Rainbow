@@ -38,7 +38,7 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 
 # Technical Details
 
-At the heart of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from: 
+At the ❤️ of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from: 
 
 ## Pre-built configurations
 
