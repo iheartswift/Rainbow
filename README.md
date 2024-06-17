@@ -193,6 +193,7 @@ Text("Small")
 
 <br />
 <br />
+
 ## Starter code
 
 There are two kinds of ways you can implement rainbow buttons: 
