@@ -20,17 +20,14 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 
 ## Features
 
-- [x] Completely Customizable
-- [x] Rectangle Buttons
-- [x] Capsule Buttons
-- [x] Cirle Buttons
-- [x] RoundedRectangle Buttons
+- [x] Customizable
+- [x] Rectangle, Circle, RoundedRectangle, Capsule 
 - [x] Sound (iOS, macOS, watchOS)
 - [x] Haptics (iOS, watchOS)
 - [x] Darkmode (few pre-build configurations support darkmode)   
 - [x] Custom borders
 - [x] Custom gradients
-- [x] Custom loaders
+- [x] Built-in loaders that support @State
 - [x] And More...
 
 <br />
