@@ -135,6 +135,224 @@ extension RainbowButtonConfiguration {
 /// Extensions to the `RainbowButtonConfiguration` type to provide various pre-defined configurations.
 extension RainbowButtonConfiguration {
     
+    /// Creates a button configuration with the specified parameters.
+    ///
+    /// - Parameters:
+    ///   - configuration: The base configuration for the button.
+    ///   - shape: The shape type of the button.
+    ///   - size: The size of the button. Default is `.extraLarge`.
+    /// - Returns: A button configuration with the specified parameters.
+    public static func configure(
+        _ configuration: RainbowButtonConfiguration,
+        _ shape: RainbowButtonShapeType,
+        _ size: RainbowButtonSize = .extraLarge
+    ) -> RainbowButtonConfiguration {
+        var c = configuration
+        c.size = size
+        c.shapeType = shape
+        return c
+    }
+        
+    /// Various pre-defined button configurations.
+    public static var `default`: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.default)
+            .setUnderline(false)
+            .setBorder(RainbowBorderOptions(colors: [RainbowColorTheme.default.foreground.opacity(0.2)], width: 1.0))
+            .setBounce(.moderate)
+            .build()
+    }
+    
+    public static var white: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.white)
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var light: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.light)
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var dark: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.dark)
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var black: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.black)
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var text: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.text)
+            .setUnderline(true)
+            .build()
+    }
+
+    public static var ghost: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.ghost)
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var primary: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.primary)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var primaryLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.primaryLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var primaryInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.primary)
+            .setFont(.largeTitle)
+            .invertTheme()
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var link: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.link)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var linkLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.linkLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var linkInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.link)
+            .setUnderline(false)
+            .invertTheme()
+            .build()
+    }
+
+    public static var info: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.info)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var infoLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.infoLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var infoInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.info)
+            .invertTheme()
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var success: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.success)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var successLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.successLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var successInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.success)
+            .invertTheme()
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var warning: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.warning)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var warningLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.warningLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var warningInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.warning)
+            .invertTheme()
+            .setUnderline(false)
+            .build()
+    }
+
+    public static var danger: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.danger)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var dangerLight: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.dangerLight)
+            .setUnderline(false)
+            .build()
+    }
+    
+    public static var dangerInverted: RainbowButtonConfiguration {
+        RainbowButtonConfigurationBuilder()
+            .setTheme(.danger)
+            .invertTheme()
+            .setUnderline(false)
+            .build()
+    }
+    
+    /// Creates an outlined button configuration with the specified theme.
+    ///
+    /// - Parameter theme: The theme for the outlined button.
+    /// - Returns: An outlined button configuration with the specified theme.
+    public static func outlined(_ theme: RainbowColorTheme) -> RainbowButtonConfiguration {
+        let backingTheme = RainbowColorTheme.outlined(theme: theme)
+        return RainbowButtonConfigurationBuilder()
+            .setTheme(backingTheme)
+            .setBorder(RainbowBorderOptions(colors: [backingTheme.foreground], width: 2))
+            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
+            .setUnderline(false)
+            .setBounce(.moderate)
+            .build()
+    }
+    
     /// Creates a `RainbowButtonConfiguration` with a rainbow theme.
     ///
     /// - Parameters:
@@ -160,265 +378,6 @@ extension RainbowButtonConfiguration {
                 )
             )
             .setContentGradient(RainbowGradientOptions(colors: colors))
-            .build()
-    }
-    
-    /// Creates an outlined button configuration with the specified theme.
-    ///
-    /// - Parameter theme: The theme for the outlined button.
-    /// - Returns: An outlined button configuration with the specified theme.
-    public static func outlined(_ theme: RainbowColorTheme) -> RainbowButtonConfiguration {
-        let backingTheme = RainbowColorTheme.outlined(theme: theme)
-        return RainbowButtonConfigurationBuilder()
-            .setTheme(backingTheme)
-            .setBorder(RainbowBorderOptions(colors: [backingTheme.foreground], width: 2))
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .setBounce(.moderate)
-            .build()
-    }
-    
-    /// A default builder for `RainbowButtonConfiguration`.
-    public static var defaultBuilder: RainbowButtonConfigurationBuilder {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.default)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .setBorder(RainbowBorderOptions(colors: [RainbowColorTheme.default.foreground.opacity(0.2)], width: 1.0))
-    }
-    
-    /// The default button configuration.
-    public static var `default`: RainbowButtonConfiguration {
-       defaultBuilder
-            .setBounce(.moderate)
-            .build()
-    }
-    
-    /// Creates a default button configuration with the specified size.
-    ///
-    /// - Parameter size: The size of the button.
-    /// - Returns: A default button configuration with the specified size.
-    public static func defaultButton(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
-        defaultBuilder
-            .setSize(size)
-            .build()
-    }
-    
-    /// Creates a button configuration with the specified parameters.
-    ///
-    /// - Parameters:
-    ///   - configuration: The base configuration for the button.
-    ///   - shape: The shape type of the button.
-    ///   - size: The size of the button. Default is `.extraLarge`.
-    /// - Returns: A button configuration with the specified parameters.
-    public static func button(
-        _ configuration: RainbowButtonConfiguration,
-        _ shape: RainbowButtonShapeType,
-        _ size: RainbowButtonSize = .extraLarge
-    ) -> RainbowButtonConfiguration {
-        var c = configuration
-        c.size = size
-        c.shapeType = shape
-        return c
-    }
-    
-    /// Various pre-defined button configurations.
-    public static var white: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.white)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var light: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.light)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var dark: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.dark)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var black: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.black)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var text: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.text)
-            .setCornerRadius(0)
-            .setUnderline(true)
-            .build()
-    }
-
-    public static var ghost: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.ghost)
-            .setCornerRadius(0)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var primary: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.primary)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var primaryLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.primaryLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var primaryInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.primary)
-            .setFont(.largeTitle)
-            .invertTheme()
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var link: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.link)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var linkLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.linkLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var linkInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.link)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .invertTheme()
-            .build()
-    }
-
-    public static var info: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.info)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var infoLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.infoLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var infoInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.info)
-            .invertTheme()
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var success: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.success)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var successLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.successLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var successInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.success)
-            .invertTheme()
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var warning: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.warning)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var warningLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.warningLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var warningInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.warning)
-            .invertTheme()
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-
-    public static var danger: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.danger)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var dangerLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.dangerLight)
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
-            .build()
-    }
-    
-    public static var dangerInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
-            .setTheme(.danger)
-            .invertTheme()
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
-            .setUnderline(false)
             .build()
     }
 }

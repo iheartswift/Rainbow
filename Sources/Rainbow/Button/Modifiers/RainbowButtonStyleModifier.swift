@@ -84,8 +84,22 @@ struct RainbowButtonStyleModifier: ViewModifier {
                                 dash: configuration.border.dashPattern
                             )
                         )
-                case .roundedRectangle, .rectangle:
+                case .roundedRectangle:
                     RoundedRectangle(cornerRadius: configuration.cornerRadius)
+                        .fill(fill(for: configuration))
+                        .strokeBorder(
+                            LinearGradient(
+                                gradient: Gradient(colors: configuration.border.colors),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ),
+                            style: StrokeStyle(
+                                lineWidth: configuration.border.width,
+                                dash: configuration.border.dashPattern
+                            )
+                        )
+                case .rectangle:
+                    Rectangle()
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(

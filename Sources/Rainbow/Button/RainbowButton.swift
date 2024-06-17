@@ -31,8 +31,8 @@ public struct RainbowButton<Content: View>: View {
     ///   - isLoading: A binding to a Boolean indicating whether the button is loading. Default is `.constant(false)`.
     public init(
         action: @escaping () -> Void,
-        content: Content,
-        configuration: RainbowButtonConfiguration = RainbowButtonConfigurationBuilder().build(),
+        _ content: Content,
+        _ configuration: RainbowButtonConfiguration = RainbowButtonConfigurationBuilder().build(),
         isLoading: Binding<Bool> = .constant(false)
     ) {
         self.content = content

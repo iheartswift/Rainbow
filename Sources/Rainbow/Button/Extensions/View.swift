@@ -21,8 +21,6 @@ public extension View {
     /// - Returns: A view with the rainbow button style applied.
     func rainbowButton(
         _ configuration: RainbowButtonConfiguration,
-        _ size: RainbowButtonSize = .normal,
-        inverted: Bool = false,
         isLoading: Binding<Bool> = .constant(false),
         _ action: @escaping () -> Void
     ) -> some View {
