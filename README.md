@@ -17,7 +17,7 @@ To install Rainbow UI Library, add the following dependency to your `Package.swi
 
 ## Sample Projects
 
-Take a look at [Example Projects](https://github.com/iheartswift/Examples) to get your projects started.
+Take a look at [Example Projects](https://github.com/iheartswift/Examples) Rainbow-Button-Examples to get your projects started.
 
 ## Features
 
