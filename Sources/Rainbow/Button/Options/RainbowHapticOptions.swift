@@ -1,10 +1,6 @@
-//
-//  RainbowHapticOptions.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-15.
-//
+import SwiftUI
 
+/// A struct that defines haptic feedback options for the Rainbow UI components.
 public struct RainbowHapticOptions {
     
     /// An enumeration of the different types of haptic feedback.
@@ -31,7 +27,7 @@ public struct RainbowHapticOptions {
     ///   - feedbackProvider: The haptic feedback provider. Default is the appropriate provider based on platform.
     public init(selectedHaptic: HapticType? = nil, feedbackProvider: RainbowHapticFeedbackProvider? = nil) {
         self.selectedHaptic = selectedHaptic
-        #if canImport(UIKit) && !os(watchOS) && !os(tvOS )
+        #if canImport(UIKit) && !os(watchOS) && !os(tvOS)
         self.feedbackProvider = feedbackProvider ?? RainbowHapticOptionsFeedbackProvider()
         #else
         self.feedbackProvider = feedbackProvider ?? RainbowNoOpHapticFeedbackProvider()

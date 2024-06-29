@@ -164,7 +164,7 @@ VStack {
 
 For custom button implementations the configuration **builder** should be utilized
 ```swift
-RainbowButtonConfigurationBuilder()
+RainbowButtonConfiguration.Builder()
      .setShape(type: .circle)
      .build()
 ```

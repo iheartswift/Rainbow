@@ -1,10 +1,3 @@
-//
-//  RainbowRotatingSquareLoaderView.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 /// A view representing a rotating square loader.

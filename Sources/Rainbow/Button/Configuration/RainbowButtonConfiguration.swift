@@ -1,16 +1,9 @@
-//
-//  RainbowButtonConfiguration.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 public struct RainbowButtonConfiguration {
     
     /// The color theme of the button.
-    public var theme: RainbowColorTheme
+    public var theme: RainbowButtonColorTheme
     
     /// The font of the button.
     public var font: Font?
@@ -31,7 +24,7 @@ public struct RainbowButtonConfiguration {
     public var size: RainbowButtonSize
     
     /// A Boolean indicating whether the button should use a capsule shape.
-    public var shapeType: RainbowButtonShapeType
+    public var shapeType: RainbowShapeType
     
     /// The type of loader to display.
     public var loaderType: RainbowLoaderType
@@ -75,15 +68,15 @@ public struct RainbowButtonConfiguration {
        - focused: The focus styling options for the button when @FocusState isFocused is true. Default is `nil`
      */
     public init(
-        theme: RainbowColorTheme = .primary,
+        theme: RainbowButtonColorTheme = .default,
         font: Font? = nil,
         border: RainbowBorderOptions = RainbowBorderOptions(),
         shadow: RainbowShadowOptions = RainbowShadowOptions(),
-        cornerRadius: CGFloat = 8,
+        cornerRadius: CGFloat = RainbowDefaults.cornerRadius,
         underline: Bool = false,
         size: RainbowButtonSize = .normal,
-        shapeType: RainbowButtonShapeType = .roundedRectangle,
-        loaderType: RainbowLoaderType = .progress,
+        shapeType: RainbowShapeType = .roundedRectangle(),
+        loaderType: RainbowLoaderType = .rainbow,
         contentGradient: RainbowGradientOptions? = nil,
         backgroundGradient: RainbowGradientOptions? = nil,
         sound: RainbowSoundOptions? = nil,
@@ -126,12 +119,6 @@ public struct RainbowButtonConfiguration {
     }
 }
 
-extension RainbowButtonConfiguration {
-
-    /// The default corner radius for the button.
-    public static var defaultCornerRadius: CGFloat = 8.0
-}
-
 /// Extensions to the `RainbowButtonConfiguration` type to provide various pre-defined configurations.
 extension RainbowButtonConfiguration {
     
@@ -144,7 +131,7 @@ extension RainbowButtonConfiguration {
     /// - Returns: A button configuration with the specified parameters.
     public static func configure(
         _ configuration: RainbowButtonConfiguration,
-        _ shape: RainbowButtonShapeType,
+        _ shape: RainbowShapeType,
         _ size: RainbowButtonSize = .extraLarge
     ) -> RainbowButtonConfiguration {
         var c = configuration
@@ -155,72 +142,72 @@ extension RainbowButtonConfiguration {
         
     /// Various pre-defined button configurations.
     public static var `default`: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.default)
             .setUnderline(false)
-            .setBorder(RainbowBorderOptions(colors: [RainbowColorTheme.default.foreground.opacity(0.2)], width: 1.0))
+            .setBorder(RainbowBorderOptions(colors: [RainbowButtonColorTheme.default.foreground.opacity(0.2)], width: 1.0))
             .setBounce(.moderate)
             .build()
     }
     
     public static var white: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.white)
             .setUnderline(false)
             .build()
     }
 
     public static var light: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.light)
             .setUnderline(false)
             .build()
     }
 
     public static var dark: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.dark)
             .setUnderline(false)
             .build()
     }
 
     public static var black: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.black)
             .setUnderline(false)
             .build()
     }
 
     public static var text: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.text)
             .setUnderline(true)
             .build()
     }
 
     public static var ghost: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.ghost)
             .setUnderline(false)
             .build()
     }
 
     public static var primary: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.primary)
             .setUnderline(false)
             .build()
     }
     
     public static var primaryLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.primaryLight)
             .setUnderline(false)
             .build()
     }
     
     public static var primaryInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.primary)
             .setFont(.largeTitle)
             .invertTheme()
@@ -229,21 +216,21 @@ extension RainbowButtonConfiguration {
     }
 
     public static var link: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.link)
             .setUnderline(false)
             .build()
     }
     
     public static var linkLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.linkLight)
             .setUnderline(false)
             .build()
     }
     
     public static var linkInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.link)
             .setUnderline(false)
             .invertTheme()
@@ -251,21 +238,21 @@ extension RainbowButtonConfiguration {
     }
 
     public static var info: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.info)
             .setUnderline(false)
             .build()
     }
     
     public static var infoLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.infoLight)
             .setUnderline(false)
             .build()
     }
     
     public static var infoInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.info)
             .invertTheme()
             .setUnderline(false)
@@ -273,21 +260,21 @@ extension RainbowButtonConfiguration {
     }
 
     public static var success: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.success)
             .setUnderline(false)
             .build()
     }
     
     public static var successLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.successLight)
             .setUnderline(false)
             .build()
     }
     
     public static var successInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.success)
             .invertTheme()
             .setUnderline(false)
@@ -295,21 +282,21 @@ extension RainbowButtonConfiguration {
     }
 
     public static var warning: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.warning)
             .setUnderline(false)
             .build()
     }
     
     public static var warningLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.warningLight)
             .setUnderline(false)
             .build()
     }
     
     public static var warningInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.warning)
             .invertTheme()
             .setUnderline(false)
@@ -317,21 +304,21 @@ extension RainbowButtonConfiguration {
     }
 
     public static var danger: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.danger)
             .setUnderline(false)
             .build()
     }
     
     public static var dangerLight: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.dangerLight)
             .setUnderline(false)
             .build()
     }
     
     public static var dangerInverted: RainbowButtonConfiguration {
-        RainbowButtonConfigurationBuilder()
+        RainbowButtonConfiguration.Builder()
             .setTheme(.danger)
             .invertTheme()
             .setUnderline(false)
@@ -342,12 +329,12 @@ extension RainbowButtonConfiguration {
     ///
     /// - Parameter theme: The theme for the outlined button.
     /// - Returns: An outlined button configuration with the specified theme.
-    public static func outlined(_ theme: RainbowColorTheme) -> RainbowButtonConfiguration {
-        let backingTheme = RainbowColorTheme.outlined(theme: theme)
-        return RainbowButtonConfigurationBuilder()
+    public static func outlined(_ theme: RainbowButtonColorTheme) -> RainbowButtonConfiguration {
+        let backingTheme = RainbowButtonColorTheme.outlined(theme: theme)
+        return RainbowButtonConfiguration.Builder()
             .setTheme(backingTheme)
             .setBorder(RainbowBorderOptions(colors: [backingTheme.foreground], width: 2))
-            .setCornerRadius(RainbowButtonConfiguration.defaultCornerRadius)
+            .setShape(type: .roundedRectangle())
             .setUnderline(false)
             .setBounce(.moderate)
             .build()
@@ -362,15 +349,15 @@ extension RainbowButtonConfiguration {
     ///   - animationInterval: The interval for the border animation. Default is `0.5`.
     /// - Returns: A `RainbowButtonConfiguration` with the specified rainbow theme.
     public static func rainbow(
-        shapeType: RainbowButtonShapeType,
+        shapeType: RainbowShapeType,
         colors: [Color] = [.yellow, .green, .blue, .red, .purple, .orange],
         borderWidth: CGFloat = 5.0,
         animationInterval: TimeInterval = 0.5
     ) -> RainbowButtonConfiguration {
-        return RainbowButtonConfigurationBuilder()
+        return RainbowButtonConfiguration.Builder()
             .setShape(type: shapeType)
             .setLoader(.rainbow)
-            .setTheme(RainbowColorTheme(background: .black, foreground: .clear, selected: .yellow.opacity(0.3)))
+            .setTheme(RainbowButtonColorTheme(background: .black, foreground: .clear, selected: .yellow.opacity(0.3)))
             .setBorder(RainbowBorderOptions(
                     colors: colors,
                     width: borderWidth,

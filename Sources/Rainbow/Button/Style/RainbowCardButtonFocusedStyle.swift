@@ -1,10 +1,3 @@
-//
-//  RainbowCardButtonFocusedStyle.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-16.
-//
-
 import SwiftUI
 
 /// A button style that customizes the appearance of a button based on its focus state.

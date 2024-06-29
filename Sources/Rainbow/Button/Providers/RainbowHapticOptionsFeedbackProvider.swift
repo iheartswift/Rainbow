@@ -1,15 +1,14 @@
-//
-//  RainbowHapticOptionsFeedbackProvider.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-16.
-//
-
 #if canImport(UIKit) && !os(watchOS) && !os(tvOS)
 import UIKit
 
+/// A concrete implementation of `RainbowHapticFeedbackProvider` that provides haptic feedback using `UIKit`'s feedback generators.
+///
+/// This struct triggers different types of haptic feedback based on the specified `RainbowHapticOptions.HapticType`.
 public struct RainbowHapticOptionsFeedbackProvider: RainbowHapticFeedbackProvider {
     
+    /// Triggers haptic feedback of the specified type.
+    ///
+    /// - Parameter type: The type of haptic feedback to trigger.
     public func triggerHapticFeedback(for type: RainbowHapticOptions.HapticType) {
         switch type {
         case .light:

@@ -1,10 +1,3 @@
-//
-//  RainbowContentGradientOptions.swift
-//
-//
-//  Created by Adam Dahan on 2024-06-15.
-//
-
 import SwiftUI
 
 /// A struct representing options for a rainbow content gradient.

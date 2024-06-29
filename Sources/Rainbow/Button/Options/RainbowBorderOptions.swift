@@ -1,10 +1,3 @@
-//
-//  RainbowBorderOptions.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 /// A struct representing options for a rainbow border.
@@ -31,7 +24,7 @@ public struct RainbowBorderOptions {
     ///   - width: The width of the border. Default is `2.0`.
     ///   - dashPattern: The dash pattern for the border. Default is an empty array.
     ///   - animationOptions: The animation options for the border. Default is `nil`.
-    public init(colors: [Color] = [.clear], width: CGFloat = 2.0, dashPattern: [CGFloat] = [], animationOptions: RainbowBorderAnimationOptions? = nil) {
+    public init(colors: [Color] = [.clear], width: CGFloat = 0.0, dashPattern: [CGFloat] = [], animationOptions: RainbowBorderAnimationOptions? = nil) {
         self.colors = colors
         self.width = width
         self.dashPattern = dashPattern

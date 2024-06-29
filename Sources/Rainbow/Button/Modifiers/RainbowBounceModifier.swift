@@ -1,10 +1,3 @@
-//
-//  RainbowBounceModifier.swift
-//
-//
-//  Created by Adam Dahan on 2024-06-16.
-//
-
 import SwiftUI
 
 /// A `ViewModifier` that applies a bounce effect using a spring animation.

@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-15.
-//
-
 import SwiftUI
 
 /// A custom button style that applies a specific appearance and behavior when the button is pressed.

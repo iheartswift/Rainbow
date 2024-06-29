@@ -1,10 +1,3 @@
-//
-//  RainbowFocusedOptions.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-16.
-//
-
 import SwiftUI
 
 /// A struct that defines the options for a button's appearance when it is focused.

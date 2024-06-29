@@ -1,10 +1,3 @@
-//
-//  RainbowButtonStyleModifier.swift
-//
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 /// A view modifier that applies a rainbow button style to a view.
@@ -63,7 +56,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
                 .scaleEffect(2.0)
                 #endif
         }
-        .underline(configuration.underline, color: RainbowColorTheme.default.foreground)
+        .underline(configuration.underline, color: RainbowButtonColorTheme.default.foreground)
         .font(configuration.size.font)
         .padding(configuration.size.padding)
         .foregroundColor(configuration.theme.foreground)
@@ -84,8 +77,8 @@ struct RainbowButtonStyleModifier: ViewModifier {
                                 dash: configuration.border.dashPattern
                             )
                         )
-                case .roundedRectangle:
-                    RoundedRectangle(cornerRadius: configuration.cornerRadius)
+                case .roundedRectangle(let cornerRadius):
+                    RoundedRectangle(cornerRadius: cornerRadius ?? RainbowDefaults.cornerRadius)
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(

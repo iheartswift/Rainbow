@@ -1,10 +1,3 @@
-//
-//  RainbowLoaderType.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import Foundation
 
 /// An enumeration representing the different types of loaders that can be used in the Rainbow UI library.

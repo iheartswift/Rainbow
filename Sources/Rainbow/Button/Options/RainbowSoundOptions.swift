@@ -1,9 +1,3 @@
-//
-//  RainbowSoundOptions.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-15.
-//
 #if canImport(AVFoundation) && !os(watchOS)
 import AVFoundation
 

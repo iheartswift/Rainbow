@@ -37,3 +37,10 @@ public struct RainbowShadowOptions {
         self.y = y
     }
 }
+
+extension RainbowShadowOptions {
+    
+    public static var `default`: RainbowShadowOptions {
+        return RainbowShadowOptions(color: .gray.opacity(0.3), radius: 4, x: 0, y: 2)
+    }
+}

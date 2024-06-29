@@ -1,10 +1,3 @@
-//
-//  RainbowButtonSize.swift
-//
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 /// An enum representing different sizes for a Rainbow Button.

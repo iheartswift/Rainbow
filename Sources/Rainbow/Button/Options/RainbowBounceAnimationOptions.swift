@@ -1,10 +1,3 @@
-//
-//  RainbowBounceAnimationOptions.swift
-//  
-//
-//  Created by Adam Dahan on 2024-06-16.
-//
-
 import Foundation
 
 /// Configuration for the RainbowBounce animation.

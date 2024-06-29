@@ -1,10 +1,3 @@
-//
-//  RainbowButtonModifier.swift
-//
-//
-//  Created by Adam Dahan on 2024-06-14.
-//
-
 import SwiftUI
 
 /// A view modifier that applies a rainbow button style to a button.

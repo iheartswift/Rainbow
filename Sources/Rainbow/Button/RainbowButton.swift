@@ -5,6 +5,7 @@ import SwiftUI
 /// The `RainbowButton` view allows for custom content, configuration, and actions.
 /// It also supports a loading state to show a loading indicator when necessary.
 public struct RainbowButton<Content: View>: View {
+    
     /// The content of the button.
     let content: Content
     
@@ -27,12 +28,12 @@ public struct RainbowButton<Content: View>: View {
     /// - Parameters:
     ///   - action: The action to perform when the button is pressed.
     ///   - content: The content of the button.
-    ///   - configuration: The configuration for the button. Default is `RainbowButtonConfigurationBuilder().build()`.
+    ///   - configuration: The configuration for the button. Default is `RainbowButtonConfiguration.Builder().build()`.
     ///   - isLoading: A binding to a Boolean indicating whether the button is loading. Default is `.constant(false)`.
     public init(
         action: @escaping () -> Void,
         _ content: Content,
-        _ configuration: RainbowButtonConfiguration = RainbowButtonConfigurationBuilder().build(),
+        _ configuration: RainbowButtonConfiguration = .default,
         isLoading: Binding<Bool> = .constant(false)
     ) {
         self.content = content
