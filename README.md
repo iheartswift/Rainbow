@@ -9,7 +9,7 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 <br />
 
-[![Watch the video](https://iheartswift.s3.amazonaws.com/ads/github-intro.mov)
+![](https://iheartswift.s3.amazonaws.com/ads/github-intro.mov)
 
 <br />
 
