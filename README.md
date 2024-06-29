@@ -217,13 +217,18 @@ Text("Sign in")
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
+
+/// Track the progress state
+@State var progress: CGFloat = 0.0
+
+/// Bind it to the progress bar
 RainbowProgressBar(.configure(.primary, .capsule), $progress)
             .frame(height: 20)
 ```
 
 | Code | Screenshot |
 |------|------------|
-| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
+| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b"> <tr></tr>|
 | Info | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
 | Link | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0d1bcf77-23c9-4146-9d2f-30a3ea6da182">|
 | Success | <img width="388" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
@@ -231,6 +236,27 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 | Danger | <img width="385" alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
 | Gradient | <img width="383" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
 | Rainbow | ![ezgif-2-0308acf325](https://github.com/iheartswift/Rainbow/assets/1205894/850c1714-ad46-4f97-97a4-6aaa53b658e7)| 
+
+### Progress ScrollView 
+
+You can also attach the progress bar to the RainbowProgressScrollView
+
+```swift
+
+@State var progress: CGFloat = 0.0
+
+/// Create the progress bar and bind state
+RainbowProgressBar(.configure(.rainbow, .rectangle), $progress)
+                .frame(height: 20)
+            
+/// Create the scrollView and bind @State 
+RainbowScrollProgressView(progress: $progress) {
+   // scrollView stuff
+} 
+```
+
+![ezgif-2-4fbbee0953](https://github.com/iheartswift/Rainbow/assets/1205894/741c6cf3-9b1a-4b69-a4fc-6e03ce12f9ff)
+
 
 ## Sample Projects
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
