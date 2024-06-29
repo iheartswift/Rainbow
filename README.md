@@ -26,17 +26,15 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 <br />
 
+# Buttons
+
+At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
+
 ## Multiplatform
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
 | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-971b00b241.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-64aa8c2126.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-ab6a7b0278.gif) | ![](https://iheartswift.s3.amazonaws.com/rainbow/ezgif-5-14bc19d1fc.gif) |
-
-<br />
-
-# Buttons
-
-At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
 
 <br />
 
@@ -257,7 +255,31 @@ RainbowScrollProgressView(progress: $progress) {
 } 
 ```
 
+Example:
 ![ezgif-2-4fbbee0953](https://github.com/iheartswift/Rainbow/assets/1205894/741c6cf3-9b1a-4b69-a4fc-6e03ce12f9ff)
+
+
+# Cards
+
+<hr />
+
+Cards are highly configurable and support a few cool features out the box like auto-playing video and loading images from a network.
+
+```swift
+
+/// The most basic kind of card
+RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
+```
+
+| Code | Screenshot |
+|------|------------|
+| Header | <img width="399" alt="Screenshot 2024-06-29 at 9 55 28 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/06e8d5f2-c9f5-4410-8a76-999b97b75b1e"><tr></tr>|
+| Header + Button | <img width="401" alt="Screenshot 2024-06-29 at 9 55 35 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/6de5eb96-2120-49b3-b7cf-10fcea44f1c4">|
+| Header + (Button + Image) | <img width="399" alt="Screenshot 2024-06-29 at 9 55 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/11d30ee6-9e11-46c1-ae51-cecf7d2fbb9b"> |
+| Header + Media + Content |  <img width="403" alt="Screenshot 2024-06-29 at 9 55 54 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3f46ea98-752a-4db7-8544-221554eccbce"> |
+| Custom Media + Content | <img width="403" alt="Screenshot 2024-06-29 at 9 57 04 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/f989f494-a189-41c9-9456-ef4ea57bcf0a"> |
+| Media + Overlay | <img width="402" alt="Screenshot 2024-06-29 at 9 57 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0074fc95-8858-4f6c-94cc-4276d1658937"> |
+| Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 9 57 20 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e0493118-8930-414f-8fa4-f771831bb7b5"> |
 
 
 ## Sample Projects
