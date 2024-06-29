@@ -213,7 +213,6 @@ Text("Sign in")
 
 # Progress Bars
 
-
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
@@ -238,7 +237,7 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 
 ### Progress Bars and ScrollView 
 
-You can also attach the progress bar to the RainbowProgressScrollView
+You can also attach the progress bar to the RainbowProgressScrollView and it will automatically adjust to reach max progress scrolled to the bottom of your content.
 
 ```swift
 @State var progress: CGFloat = 0.0
