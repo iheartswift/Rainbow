@@ -36,7 +36,9 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 # Buttons
 
-<hr />
+At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
+
+<br />
 
 ## Pre-built configurations
 
