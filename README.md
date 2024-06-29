@@ -20,9 +20,9 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 ## Features
 
-- [x] Customizable and pre-configured buttons
-- [x] Customizable and pre-configured progress bars
-- [x] Customizable cards
+- [x] Customizable and pre-configured multiplatform buttons (iOS, macOS, tvOS, watchOS)
+- [x] Customizable and pre-configured multiplatform progress bars (iOS, macOS, tvOS, watchOS)
+- [x] Customizable multiplatform cards (iOS, macOS)
 
 <br />
 
@@ -30,7 +30,9 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
 
-## Multiplatform
+<br />
+
+## Buttons are multiplatform by default
 
 | iOS | macOS | watchOS | tvOS |
 |-----|-------|---------|------|
@@ -38,9 +40,9 @@ At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the
 
 <br />
 
-## Pre-built configurations
+## Pre-built Button configurations
 
-You can try these configurations out in the [examples repository](https://github.com/iheartswift/Examples) in the **Rainbow-Button-Examples** project.
+See the table below for all the different kinds of pre-built button configurations. 
 
 <br />
 
@@ -139,7 +141,7 @@ VStack {
 
 <br />
 
-# Button Shapes 
+## Button Shapes 
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.32.53%E2%80%AFPM.png" height="200">
 
 A custom static configuration is available that makes it east to set the shape:
@@ -163,7 +165,7 @@ RainbowButtonConfigurationBuilder()
 
 <br />
 
-# Button Sizes
+## Button Sizes
 <img src="https://iheartswift.s3.amazonaws.com/rainbow/Screenshot+2024-06-17+at+12.37.22%E2%80%AFPM.png" height="120">
 
 | Size        | Description                             |
@@ -184,9 +186,8 @@ Text("Small")
 ```
 
 <br />
-<br />
 
-## Starter code
+## Additional Information about Buttons
 
 There are two kinds of ways you can implement rainbow buttons: 
 
@@ -212,12 +213,10 @@ Text("Sign in")
 
 # Progress Bars
 
-<hr />
 
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
-
 /// Track the progress state
 @State var progress: CGFloat = 0.0
 
@@ -228,7 +227,7 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 
 | Code | Screenshot |
 |------|------------|
-| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b"> <tr></tr>|
+| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
 | Info | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
 | Link | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0d1bcf77-23c9-4146-9d2f-30a3ea6da182">|
 | Success | <img width="388" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
@@ -237,12 +236,11 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 | Gradient | <img width="383" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
 | Rainbow | ![ezgif-2-0308acf325](https://github.com/iheartswift/Rainbow/assets/1205894/850c1714-ad46-4f97-97a4-6aaa53b658e7)| 
 
-### Progress ScrollView 
+### Progress Bars and ScrollView 
 
 You can also attach the progress bar to the RainbowProgressScrollView
 
 ```swift
-
 @State var progress: CGFloat = 0.0
 
 /// Create the progress bar and bind state
@@ -255,18 +253,15 @@ RainbowScrollProgressView(progress: $progress) {
 } 
 ```
 
-Example:
 ![ezgif-2-4fbbee0953](https://github.com/iheartswift/Rainbow/assets/1205894/741c6cf3-9b1a-4b69-a4fc-6e03ce12f9ff)
 
+<br />
 
 # Cards
-
-<hr />
 
 Cards are highly configurable and support a few cool features out the box like auto-playing video and loading images from a network.
 
 ```swift
-
 /// The most basic kind of card
 RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 ```
@@ -279,8 +274,8 @@ RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 | Header + Media + Content |  <img width="403" alt="Screenshot 2024-06-29 at 9 55 54 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3f46ea98-752a-4db7-8544-221554eccbce"> |
 | Custom Media + Content | <img width="403" alt="Screenshot 2024-06-29 at 9 57 04 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/f989f494-a189-41c9-9456-ef4ea57bcf0a"> |
 | Media + Overlay | <img width="402" alt="Screenshot 2024-06-29 at 9 57 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0074fc95-8858-4f6c-94cc-4276d1658937"> |
-| Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 9 57 20 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e0493118-8930-414f-8fa4-f771831bb7b5"> |
+| Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 10 40 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/40e5041c-7927-44b1-9336-ac7b9e094d88">|
 
 
-## Sample Projects
-Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
+## Sample Code
+Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
