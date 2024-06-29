@@ -36,9 +36,7 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 # Buttons
 
-At the ❤️ of Rainbow buttons is the **RainbowButtonConfiguration** the configurator for all the wonderful buttons you see in the [examples repository](https://github.com/iheartswift/Examples) and images below. There are many pre-configured button configurations that you can choose from: 
-
-<br />
+<hr />
 
 ## Pre-built configurations
 
@@ -213,6 +211,8 @@ Text("Sign in")
 <br />
 
 # Progress Bars
+
+<hr />
 
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
