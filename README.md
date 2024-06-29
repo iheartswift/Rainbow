@@ -214,10 +214,23 @@ Text("Sign in")
 
 # Progress Bars
 
+Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
+
+```swift
+RainbowProgressBar(.configure(.primary, .capsule), $progress)
+            .frame(height: 20)
+```
+
 | Code | Screenshot |
 |------|------------|
-| ```swift  RainbowProgressBar(.configure(.primary, .capsule), $progress) ``` | <img width="383" alt="Screenshot 2024-06-29 at 9 51 31 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9e57ad28-37f8-42bd-8c28-2ece09358fa9">
-<img width="383" alt="Screenshot 2024-06-29 at 9 51 31 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9e57ad28-37f8-42bd-8c28-2ece09358fa9"> |
+| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
+| Info | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
+| Link | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0d1bcf77-23c9-4146-9d2f-30a3ea6da182">|
+| Success | <img width="388" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
+| Warning | <img width="383" alt="Screenshot 2024-06-29 at 9 51 38 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/c0dc350a-d20c-4387-8847-a5e7d4c5c544">|
+| Danger | <img width="385" alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
+| Gradient | <img width="383" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
+| Rainbow | ![ezgif-2-0308acf325](https://github.com/iheartswift/Rainbow/assets/1205894/850c1714-ad46-4f97-97a4-6aaa53b658e7)| 
 
 ## Sample Projects
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **Rainbow-Button-Examples** to get your projects started.
