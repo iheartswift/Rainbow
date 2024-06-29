@@ -1,5 +1,7 @@
 import SwiftUI
+#if !os(watchOS)
 import AVKit
+#endif
 
 public struct RainbowCardMedia: View {
     
@@ -47,6 +49,9 @@ public struct RainbowCardMedia: View {
                 }
                 
             case .localVideo(let url), .urlVideo(let url):
+                #if os(watchOS)
+                Image(systemName: "play.circle")
+                #else
                 VideoPlayer(player: getPlayer(for: url))
                     .clipped()
                     .onAppear {
@@ -54,6 +59,7 @@ public struct RainbowCardMedia: View {
                             getPlayer(for: url).play()
                         }
                     }
+                #endif
             }
             
             if let overlay = configuration.gradientOverlay {
@@ -90,6 +96,7 @@ public struct RainbowCardMedia: View {
         }
     }
     
+    #if !os(watchOS)
     private func getPlayer(for url: URL) -> AVPlayer {
         let player = AVQueuePlayer(url: url)
         if configuration.shouldLoop {
@@ -100,5 +107,7 @@ public struct RainbowCardMedia: View {
         }
         return player
     }
+    #endif
 }
+
 

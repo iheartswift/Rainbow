@@ -39,9 +39,9 @@ public struct RainbowCardHeaderConfiguration {
     ///   - buttonConfiguration: The configuration for the button in the header. Default is `.default`.
     public init(
         titleFont: Font = .headline,
-        titleColor: Color = .primary,
+        titleColor: Color = Color.rainbowColor("systemForeground"),
         subtitleFont: Font = .subheadline,
-        subtitleColor: Color = .secondary,
+        subtitleColor: Color = .gray,
         titlePadding: EdgeInsets = EdgeInsets(top: 10, leading: 0, bottom: 2, trailing: 0),
         subtitlePadding: EdgeInsets = EdgeInsets(),
         buttonConfiguration: RainbowButtonConfiguration = .default

@@ -19,19 +19,6 @@ public struct RainbowDefaults {
     
     /// An adaptive background color that changes based on the current user interface style (light or dark mode).
     public static var adaptiveColor: Color {
-        #if os(macOS)
-        let appearance = NSApplication.shared.effectiveAppearance
-        let isDarkMode = appearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua
-        return Color(isDarkMode ? NSColor.black : NSColor.white)
-        #else
-        return Color(UIColor { traitCollection in
-            switch traitCollection.userInterfaceStyle {
-            case .dark:
-                return UIColor.black
-            default:
-                return UIColor.white
-            }
-        })
-        #endif
+        Color.rainbowColor("systemBackground")
     }
 }
