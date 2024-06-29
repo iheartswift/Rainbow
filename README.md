@@ -9,6 +9,10 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 <br />
 
+[![Watch the video](https://iheartswift.s3.amazonaws.com/ads/github-intro.mov)
+
+<br />
+
 ## 📦 Installation
 
 To install Rainbow Library, add the following dependency to your `Package.swift` file:
