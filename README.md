@@ -9,7 +9,9 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 <br />
 
-![](https://iheartswift.s3.amazonaws.com/ads/github-intro.mov)
+<video width="500" height="400" controls>
+  <source src="https://iheartswift.s3.amazonaws.com/ads/github-intro.mov" type="video/mp4">
+</video>
 
 <br />
 
