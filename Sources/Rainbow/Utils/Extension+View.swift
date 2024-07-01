@@ -11,17 +11,4 @@ public extension View {
     public func roundRect(cornerRadius: CGFloat) -> some View {
         self.clipShape(RoundedRectangle(cornerRadius: cornerRadius))
     }
-    
-    public func pinchToZoom() -> some View {
-        self.modifier(PinchToZoom())
-    }
-    
-    @ViewBuilder
-    public func pinchToZoom(if condition: Bool) -> some View {
-        if condition {
-            self.modifier(PinchToZoom())
-        } else {
-            self
-        }
-    }
 }
