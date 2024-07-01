@@ -36,7 +36,7 @@ public struct RainbowImage: View {
             Image(systemName: name)
                 .resizable()
         case .url(let url):
-            RemoteImage(url: url)
+            RainbowRemoteImage(url: url)
         }
     }
 }

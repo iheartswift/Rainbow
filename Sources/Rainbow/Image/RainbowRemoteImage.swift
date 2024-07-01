@@ -1,8 +1,12 @@
 import SwiftUI
 
-public struct RemoteImage: View {
+struct RainbowRemoteImage: View {
     
-    var url: URL
+    private var url: URL
+    
+    init(url: URL) {
+        self.url = url
+    }
     
     public var body: some View {
         AsyncImage(url: url) { phase in

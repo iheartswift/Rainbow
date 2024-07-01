@@ -4,10 +4,10 @@ import SwiftUI
 public struct RainbowImageConfiguration {
     
     /// The type of media content.
-    let source: ImageSource
+    private(set) var source: ImageSource
     
     /// An optional gradient overlay for the image.
-    let gradientOverlay: LinearGradient?
+    private(set) var gradientOverlay: LinearGradient?
     
     public init(source: ImageSource,
                 gradientOverlay: LinearGradient? = nil) {
