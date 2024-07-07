@@ -1,9 +1,7 @@
 import SwiftUI
 
 /// A view modifier that applies a rainbow button style to a view.
-///
-/// This modifier applies a rainbow button style to a view, with a loading indicator and various customizable options.
-struct RainbowButtonStyleModifier: ViewModifier {
+public struct RainbowButtonStyleModifier: ViewModifier {
     /// The configuration for the rainbow button.
     let configuration: RainbowButtonConfiguration
     
@@ -15,7 +13,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
     
     /// The current index of the border color for the animation.
     @State private var currentIndex = 0
-
+    
     /// State to track focus on tvOS
     #if os(tvOS)
     @FocusState private var isFocused
@@ -46,7 +44,7 @@ struct RainbowButtonStyleModifier: ViewModifier {
     ///
     /// - Parameter content: The content view to which the modifier is applied.
     /// - Returns: A view with the rainbow button style applied.
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         ZStack {
             contentView(from: content)
             RainbowLoaderView(configuration: configuration)
@@ -68,83 +66,73 @@ struct RainbowButtonStyleModifier: ViewModifier {
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(
-                                gradient: Gradient(colors: configuration.border.colors),
+                                gradient: Gradient(colors: currentBorderColors()),
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ),
-                            style: StrokeStyle(
-                                lineWidth: configuration.border.width,
-                                dash: configuration.border.dashPattern
-                            )
+                            style: strokeStyle()
                         )
                 case .roundedRectangle(let cornerRadius):
                     RoundedRectangle(cornerRadius: cornerRadius ?? RainbowDefaults.cornerRadius)
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(
-                                gradient: Gradient(colors: configuration.border.colors),
+                                gradient: Gradient(colors: currentBorderColors()),
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ),
-                            style: StrokeStyle(
-                                lineWidth: configuration.border.width,
-                                dash: configuration.border.dashPattern
-                            )
+                            style: strokeStyle()
                         )
                 case .rectangle:
                     Rectangle()
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(
-                                gradient: Gradient(colors: configuration.border.colors),
+                                gradient: Gradient(colors: currentBorderColors()),
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ),
-                            style: StrokeStyle(
-                                lineWidth: configuration.border.width,
-                                dash: configuration.border.dashPattern
-                            )
+                            style: strokeStyle()
                         )
                 case .circle:
                     Circle()
                         .fill(fill(for: configuration))
                         .strokeBorder(
                             LinearGradient(
-                                gradient: Gradient(colors: configuration.border.colors),
+                                gradient: Gradient(colors: currentBorderColors()),
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ),
-                            style: StrokeStyle(
-                                lineWidth: configuration.border.width,
-                                dash: configuration.border.dashPattern
-                            )
+                            style: strokeStyle()
                         )
                 }
             }
         )
         .shadow(color: configuration.shadow.color, radius: configuration.shadow.radius, x: configuration.shadow.x, y: configuration.shadow.y)
+        .onAppear {
+            startBorderAnimation()
+        }
     }
     
     /// Creates a `StrokeStyle` from the given configuration.
     ///
     /// - Parameter configuration: The button configuration.
     /// - Returns: A `StrokeStyle` based on the configuration.
-    private func strokeStyle(from configuration: RainbowButtonConfiguration) -> StrokeStyle {
+    private func strokeStyle() -> StrokeStyle {
         StrokeStyle(
             lineWidth: configuration.border.width,
             dash: configuration.border.dashPattern
         )
     }
     
-    /// Runs a continuous animation to cycle through the border colors.
-    ///
-    /// - Parameter interval: The time interval for the animation.
-    private func runAnimation(interval: TimeInterval) {
-        withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: false)) {
-            Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
-                withAnimation {
-                    currentIndex = (currentIndex + 1) % configuration.border.colors.count
-                }
+    /// Starts a continuous animation to cycle through the border colors.
+    private func startBorderAnimation() {
+        guard let interval = configuration.border.animationOptions?.interval, interval > 0 else {
+            return
+        }
+        Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
+            withAnimation {
+                currentIndex = (currentIndex + 1) % configuration.border.colors.count
             }
         }
     }
@@ -166,4 +154,15 @@ struct RainbowButtonStyleModifier: ViewModifier {
         )
         return configuration.backgroundGradient == nil ? standardGradient : backgroundGradient
     }
+    
+    /// Gets the current border colors for the progress bar.
+    ///
+    /// - Returns: An array of colors for the border.
+    private func currentBorderColors() -> [Color] {
+        if let interval = configuration.border.animationOptions?.interval, interval > 0 {
+            return [configuration.border.colors[currentIndex % configuration.border.colors.count]]
+        }
+        return configuration.border.colors
+    }
 }
+

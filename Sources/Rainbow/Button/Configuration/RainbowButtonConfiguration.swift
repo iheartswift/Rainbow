@@ -68,7 +68,7 @@ public struct RainbowButtonConfiguration {
        - focused: The focus styling options for the button when @FocusState isFocused is true. Default is `nil`
      */
     public init(
-        theme: RainbowButtonColorTheme = .default,
+        theme: RainbowButtonColorTheme = RainbowButtonColorTheme.default,
         font: Font? = nil,
         border: RainbowBorderOptions = RainbowBorderOptions(),
         shadow: RainbowShadowOptions = RainbowShadowOptions(),
