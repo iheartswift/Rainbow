@@ -292,6 +292,7 @@ Text(notificationText)
 
 ![ezgif-5-a851dce120](https://github.com/iheartswift/Rainbow/assets/1205894/2ee09ed3-a8ea-4731-ac45-9c729b1476ed)
 
+<img width="1020" alt="Screenshot 2024-07-07 at 1 22 57 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/068927df-8182-4642-bb93-bf9dda675e9c">
 
 ## Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
