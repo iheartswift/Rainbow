@@ -14,7 +14,7 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 To install Rainbow Library, add the following dependency to your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.0.1")
+.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.1.0")
 ```
 <br />
 
@@ -274,6 +274,23 @@ RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 | Custom Media + Content | <img width="403" alt="Screenshot 2024-06-29 at 9 57 04 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/f989f494-a189-41c9-9456-ef4ea57bcf0a"> |
 | Media + Overlay | <img width="402" alt="Screenshot 2024-06-29 at 9 57 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0074fc95-8858-4f6c-94cc-4276d1658937"> |
 | Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 10 40 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/40e5041c-7927-44b1-9336-ac7b9e094d88">|
+
+# Notifications
+
+The notification is a simple colored block meant to draw the attention to the user about something. As such, it can be used as a pinned notification in the corner of the view. That's why it supports the use of the close button.
+
+```swift
+@State private var isPresented = false
+
+let notificationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla."
+
+Text(notificationText)
+     .rainbowNotification(configuration: .outlineWarning, isPresented: $isPresented) {
+           print("Closed")
+     }
+```
+
+![ezgif-5-a851dce120](https://github.com/iheartswift/Rainbow/assets/1205894/2ee09ed3-a8ea-4731-ac45-9c729b1476ed)
 
 
 ## Sample Code
