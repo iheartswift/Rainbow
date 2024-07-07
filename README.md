@@ -290,9 +290,18 @@ Text(notificationText)
      }
 ```
 
-![ezgif-5-a851dce120](https://github.com/iheartswift/Rainbow/assets/1205894/2ee09ed3-a8ea-4731-ac45-9c729b1476ed)
+| Code | Screenshot |
+|------|------------|
+| Primary | <img width="1069" alt="Screenshot 2024-07-07 at 1 26 26 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/121e84cc-c79d-488d-af8e-778cc1a0cf4f"> |
+| Link | <img width="1066" alt="Screenshot 2024-07-07 at 1 26 46 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/b91a8a30-53b4-4db7-96eb-73d3dcce0093"> |
+| Info |<img width="1058" alt="Screenshot 2024-07-07 at 1 27 28 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/2ad6d668-b163-4184-b4ca-7395da1f7535"> |
+| Success | <img width="1060" alt="Screenshot 2024-07-07 at 1 28 19 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0973b3cb-ee7b-4dfc-bc80-a7c71fc8eb75"> |
+| Warning | <img width="1064" alt="Screenshot 2024-07-07 at 1 28 34 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/578a6e01-a0ad-461a-99ec-d72d5fe5d49d"> |
+| Danger | <img width="1064" alt="Screenshot 2024-07-07 at 1 29 09 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/4ca99ead-20a6-46c1-b93c-9d07e3342207">|
 
-<img width="1020" alt="Screenshot 2024-07-07 at 1 22 57 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/068927df-8182-4642-bb93-bf9dda675e9c">
+### Note about RainbowNotification
+
+All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
 
 ## Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
