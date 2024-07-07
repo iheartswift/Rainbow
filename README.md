@@ -22,7 +22,7 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 - [x] Buttons (iOS, macOS, tvOS, watchOS)
 - [x] Progress Bars (iOS, macOS, tvOS, watchOS)
-- [x] Progress Bars (ScrollView) (iOS, macOS, tvOS, watchOS)
+- [x] Progress Bar for ScrollView (iOS, macOS, tvOS, watchOS)
 - [x] Cards (iOS, macOS)
 - [x] Notifications (iOS, macOS, tvOS, watchOS)
 
