@@ -20,9 +20,10 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 ## Features
 
-- [x] Customizable and pre-configured multiplatform buttons (iOS, macOS, tvOS, watchOS)
-- [x] Customizable and pre-configured multiplatform progress bars (iOS, macOS, tvOS, watchOS)
-- [x] Customizable multiplatform cards (iOS, macOS)
+- [x] Buttons (iOS, macOS, tvOS, watchOS)
+- [x] Progress Bars (iOS, macOS, tvOS, watchOS)
+- [x] Cards (iOS, macOS)
+- [x] Notifications (iOS, macOS, tvOS, watchOS)
 
 <br />
 
