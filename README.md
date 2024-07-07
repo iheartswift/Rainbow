@@ -299,7 +299,7 @@ Text(notificationText)
 | Warning | <img width="1064" alt="Screenshot 2024-07-07 at 1 28 34 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/578a6e01-a0ad-461a-99ec-d72d5fe5d49d"> |
 | Danger | <img width="1064" alt="Screenshot 2024-07-07 at 1 29 09 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/4ca99ead-20a6-46c1-b93c-9d07e3342207">|
 
-### Note about RainbowNotification
+##### RainbowNotification Variations
 
 All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
 
