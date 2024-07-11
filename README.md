@@ -312,6 +312,7 @@ All light and outlined variations of RainwboNotificationConfiguration are availa
 Click the link below for the **Youtube video series** on how to use Rainbow:
 https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
 
+<br />
 
 ## Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
