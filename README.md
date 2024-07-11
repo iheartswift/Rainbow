@@ -305,7 +305,7 @@ Text(notificationText)
 
 All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
 
-
+<br />
 
 ## Youtube
 
