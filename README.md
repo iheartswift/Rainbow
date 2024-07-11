@@ -14,7 +14,7 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 To install Rainbow Library, add the following dependency to your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.1.0")
+.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.1.1")
 ```
 <br />
 
@@ -249,7 +249,7 @@ RainbowProgressBar(.configure(.rainbow, .rectangle), $progress)
                 .frame(height: 20)
             
 /// Create the scrollView and bind @State 
-RainbowScrollProgressView(progress: $progress) {
+RainbowProgressScrollView(progress: $progress) {
    // scrollView stuff
 } 
 ```
