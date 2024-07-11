@@ -7,7 +7,7 @@ public struct RainbowProgressBar: View {
     let configuration: RainbowProgressBarConfiguration
     
     /// The current progress value.
-    @Binding var progress: CGFloat
+    @Binding var progress: Double
     
     /// State variable to track the animated border color index.
     @State private var animatedBorderColorIndex: Int = 0
@@ -20,7 +20,10 @@ public struct RainbowProgressBar: View {
     /// - Parameters:
     ///   - configuration: The configuration for the progress bar.
     ///   - progress: A binding to the current progress value.
-    public init(_ configuration: RainbowProgressBarConfiguration, _ progress: Binding<CGFloat>) {
+    public init(
+        _ configuration: RainbowProgressBarConfiguration,
+        _ progress: Binding<Double>
+    ) {
         self.configuration = configuration
         self._progress = progress
     }
