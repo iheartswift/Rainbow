@@ -14,15 +14,17 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 To install Rainbow Library, add the following dependency to your `Package.swift` file:
 
 ```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.0.1")
+.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.1.0")
 ```
 <br />
 
 ## Features
 
-- [x] Customizable and pre-configured multiplatform buttons (iOS, macOS, tvOS, watchOS)
-- [x] Customizable and pre-configured multiplatform progress bars (iOS, macOS, tvOS, watchOS)
-- [x] Customizable multiplatform cards (iOS, macOS)
+- [x] Buttons (iOS, macOS, tvOS, watchOS)
+- [x] Progress Bars (iOS, macOS, tvOS, watchOS)
+- [x] Progress Bar for ScrollView (iOS, macOS, tvOS, watchOS)
+- [x] Cards (iOS, macOS)
+- [x] Notifications (iOS, macOS, tvOS, watchOS)
 
 <br />
 
@@ -275,6 +277,33 @@ RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 | Media + Overlay | <img width="402" alt="Screenshot 2024-06-29 at 9 57 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0074fc95-8858-4f6c-94cc-4276d1658937"> |
 | Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 10 40 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/40e5041c-7927-44b1-9336-ac7b9e094d88">|
 
+# Notifications
+
+The notification is a simple colored block meant to draw the attention to the user about something. As such, it can be used as a pinned notification in the corner of the view. That's why it supports the use of the close button.
+
+```swift
+@State private var isPresented = false
+
+let notificationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla."
+
+Text(notificationText)
+     .rainbowNotification(configuration: .outlineWarning, isPresented: $isPresented) {
+           print("Closed")
+     }
+```
+
+| Code | Screenshot |
+|------|------------|
+| Primary | <img width="1069" alt="Screenshot 2024-07-07 at 1 26 26 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/121e84cc-c79d-488d-af8e-778cc1a0cf4f"> |
+| Link | <img width="1066" alt="Screenshot 2024-07-07 at 1 26 46 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/b91a8a30-53b4-4db7-96eb-73d3dcce0093"> |
+| Info |<img width="1058" alt="Screenshot 2024-07-07 at 1 27 28 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/2ad6d668-b163-4184-b4ca-7395da1f7535"> |
+| Success | <img width="1060" alt="Screenshot 2024-07-07 at 1 28 19 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0973b3cb-ee7b-4dfc-bc80-a7c71fc8eb75"> |
+| Warning | <img width="1064" alt="Screenshot 2024-07-07 at 1 28 34 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/578a6e01-a0ad-461a-99ec-d72d5fe5d49d"> |
+| Danger | <img width="1064" alt="Screenshot 2024-07-07 at 1 29 09 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/4ca99ead-20a6-46c1-b93c-9d07e3342207">|
+
+##### RainbowNotification Variations
+
+All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
 
 ## Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
