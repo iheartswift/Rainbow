@@ -28,6 +28,7 @@ To install the Rainbow library, follow these steps:
 - [x] Progress Bar for ScrollView (iOS, macOS, tvOS, watchOS)
 - [x] Cards (iOS, macOS)
 - [x] Notifications (iOS, macOS, tvOS, watchOS)
+- [x] TextFields (iOS, macOS*) [📣 Coming to tvOS/watchOS soon]
 
 <br />
 
