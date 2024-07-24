@@ -11,10 +11,16 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 ## 📦 Installation
 
-To install Rainbow Library, paste the following url into Swift Package Manager search:
+To install the Rainbow library, follow these steps:
 
-```swift
-https://github.com/iheartswift/Rainbow.git ~> 2.2.0
+1. Open your Xcode project.
+2. Select **File** > **Add Packages...** from the menu.
+3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
+4. Choose the version you want to install. For example, to install version 2.2.0, select: ~> `2.2.0`
+5. Click Add Package to integrate Rainbow into your project.
+
+###### Instructional video on how to install: 
+https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=2
 ```
 <br />
 
@@ -29,6 +35,9 @@ https://github.com/iheartswift/Rainbow.git ~> 2.2.0
 <br />
 
 # Buttons
+
+###### Instructional videos: 
+https://www.youtube.com/watch?v=oWUJ-kzcI9Y&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=3&pp=iAQB
 
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
 
@@ -214,6 +223,9 @@ Text("Sign in")
 <br />
 
 # Progress Bars
+
+###### Instructional videos: 
+https://www.youtube.com/watch?v=BYQB2YGo1z8&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=5
 
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
