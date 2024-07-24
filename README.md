@@ -236,13 +236,13 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 
 | Code | Screenshot |
 |------|------------|
-| Primary | <img width="400" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
-| Info | <img width="400" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
-| Link | <img width="400" alt="Screenshot 2024-07-24 at 7 03 01 PM" src="https://github.com/user-attachments/assets/f7f92488-b6f0-4358-ab79-bd592fdf05ad">|
-| Success | <img width="400" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
-| Warning | <img width="400" alt="Screenshot 2024-06-29 at 9 51 38 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/c0dc350a-d20c-4387-8847-a5e7d4c5c544">|
-| Danger | <img width="400" alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
-| Gradient | <img width="400" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
+| Primary | <img alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
+| Info | <img alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
+| Link | <img alt="Screenshot 2024-07-24 at 7 03 01 PM" src="https://github.com/user-attachments/assets/f7f92488-b6f0-4358-ab79-bd592fdf05ad">|
+| Success | <img alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
+| Warning | <img alt="Screenshot 2024-06-29 at 9 51 38 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/c0dc350a-d20c-4387-8847-a5e7d4c5c544">|
+| Danger | <img alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
+| Gradient | <img alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
 | Rainbow | ![ezgif-2-0308acf325](https://github.com/iheartswift/Rainbow/assets/1205894/850c1714-ad46-4f97-97a4-6aaa53b658e7)| 
 
 ### Progress Bars and ScrollView 
