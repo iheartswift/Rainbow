@@ -36,10 +36,11 @@ https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK
 
 # Buttons
 
+###### Overview
+At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
+
 ###### Instructional videos: 
 https://www.youtube.com/watch?v=oWUJ-kzcI9Y&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=3&pp=iAQB
-
-At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
 
 <br />
 
