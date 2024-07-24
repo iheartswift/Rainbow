@@ -11,10 +11,10 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 ## 📦 Installation
 
-To install Rainbow Library, add the following dependency to your `Package.swift` file:
+To install Rainbow Library, paste the following url into Swift Package Manager search:
 
 ```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.2.0")
+https://github.com/iheartswift/Rainbow.git ~> 2.2.0
 ```
 <br />
 
