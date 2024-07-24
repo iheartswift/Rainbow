@@ -21,7 +21,7 @@ To install the Rainbow library, follow these steps:
 
 <br />
 
-## Features
+## 😯 Features
 
 - [x] Buttons (iOS, macOS, tvOS, watchOS)
 - [x] Progress Bars (iOS, macOS, tvOS, watchOS)
@@ -32,7 +32,7 @@ To install the Rainbow library, follow these steps:
 
 <br />
 
-# Buttons
+# 👆 Buttons
 
 ###### Overview
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
@@ -220,9 +220,6 @@ Text("Sign in")
 
 # Progress Bars
 
-###### Instructional videos: 
-https://www.youtube.com/watch?v=BYQB2YGo1z8&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=5
-
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
@@ -266,7 +263,7 @@ RainbowProgressScrollView(progress: $progress) {
 
 <br />
 
-# Cards
+# ♣️ Cards
 
 Cards are highly configurable and support a few cool features out the box like auto-playing video and loading images from a network.
 
@@ -285,7 +282,7 @@ RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 | Media + Overlay | <img width="402" alt="Screenshot 2024-06-29 at 9 57 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0074fc95-8858-4f6c-94cc-4276d1658937"> |
 | Media + Overlay + Footer | <img width="405" alt="Screenshot 2024-06-29 at 10 40 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/40e5041c-7927-44b1-9336-ac7b9e094d88">|
 
-# Notifications
+# 📣 Notifications
 
 The notification is a simple colored block meant to draw the attention to the user about something. As such, it can be used as a pinned notification in the corner of the view. That's why it supports the use of the close button.
 
