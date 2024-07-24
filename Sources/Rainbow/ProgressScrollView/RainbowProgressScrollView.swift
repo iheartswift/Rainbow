@@ -80,6 +80,7 @@ class FlippedClipView: NSClipView {
 public struct RainbowProgressScrollView<Content: View>: NSViewRepresentable {
     
     @Binding var progress: Double
+    
     let content: Content
 
     /// Initializes a new instance of `RainbowScrollProgressView`.
