@@ -11,11 +11,17 @@ Welcome to the Rainbow Library! This library provides a vibrant and customizable
 
 ## 📦 Installation
 
-To install Rainbow Library, add the following dependency to your `Package.swift` file:
+To install the Rainbow library, follow these steps:
 
-```swift
-.package(url: "https://github.com/iheartswift/Rainbow.git", from: "2.1.1")
-```
+1. Open your Xcode project.
+2. Select **File** > **Add Packages...** from the menu.
+3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
+4. Choose the version you want to install. For example, to install version 2.2.0, select: ~> `2.2.0`
+5. Click Add Package to integrate Rainbow into your project.
+
+###### Instructional video on how to install: 
+https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=2
+
 <br />
 
 ## Features
@@ -30,7 +36,11 @@ To install Rainbow Library, add the following dependency to your `Package.swift`
 
 # Buttons
 
+###### Overview
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
+
+###### Instructional videos: 
+https://www.youtube.com/watch?v=oWUJ-kzcI9Y&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=3&pp=iAQB
 
 <br />
 
@@ -215,6 +225,9 @@ Text("Sign in")
 
 # Progress Bars
 
+###### Instructional videos: 
+https://www.youtube.com/watch?v=BYQB2YGo1z8&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=5
+
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
@@ -306,6 +319,51 @@ Text(notificationText)
 All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
 
 <br />
+
+# TextFields (Beta)
+
+Introducing RainbowField: A Highly Customizable SwiftUI Component
+Welcome to RainbowField, a versatile and highly customizable text field component for SwiftUI! RainbowField offers a wide range of configuration options to tailor its appearance and behavior to your needs. Whether you need a standard text field or a call-to-action (CTA) field, RainbowField has you covered. Below is a comprehensive overview of the configuration options available to help you get the most out of this component.
+
+Key Features
+- Field Style: Choose between default and CTA styles to suit your use case.
+- Shape Type: Define the bounding box shape of the field, such as a rounded rectangle.
+- Header Options: Add optional headers to provide context or instructions above the field.
+- Text Options: Customize the appearance and behavior of the text within the field.
+- CTA Options: Integrate call-to-action elements seamlessly within the field.
+- Placeholder Text Options: Personalize the placeholder text to guide users effectively.
+- Caption Text Options: Add captions below the field for additional information or hints.
+- Cursor Options: Modify the cursor's appearance to enhance user experience.
+- Clear Button Options: Include clear buttons for quick text deletion, suitable for fields like username, email, and password.
+- Icon Options: Add icons to the field for a more intuitive interface.
+- State-Based Appearance: Define distinct appearances for idle, focus, valid, and invalid states to provide visual feedback to users.
+- Validation Rules: Implement custom validation rules to ensure data integrity.
+
+| TextField Appearance States | Screenshot |
+|------|------------|
+| Idle State | <img width="541" alt="Screenshot 2024-07-23 at 7 43 53 PM" src="https://github.com/user-attachments/assets/1e0311e3-06b8-4167-8ef8-19ae39390720">|
+| Focus | <img width="543" alt="Screenshot 2024-07-23 at 7 44 05 PM" src="https://github.com/user-attachments/assets/a82cb250-eb2e-4450-bcc1-dcc940ae5a78"> |
+| Valid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
+| Invalid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
+
+### Beta
+The API for this component isn't stable yet, still playing around with ideas :) feel free to chime in!
+
+### Example
+
+```swift
+RainbowField(
+    viewModel: RainbowFieldViewModel(
+        configuration: RainbowFieldConfiguration.Builder()
+            .setHeaderOptions(.init(text: "Image left"))
+            .setIconOptions(.init(leftImageSystemName: "phone"))
+            .setPlaceholderTextOptions(.init(text: "Enter Phone"))
+            .build()
+    )
+)
+```
+See the **Examples Repository** [TBD] Link.
+
 
 ## Youtube
 
