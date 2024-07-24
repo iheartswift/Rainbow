@@ -77,9 +77,9 @@ class FlippedClipView: NSClipView {
 }
 
 /// A view that represents a scrollable content area with progress tracking for macOS.
-public struct RainbowScrollProgressView<Content: View>: NSViewRepresentable {
+public struct RainbowProgressScrollView<Content: View>: NSViewRepresentable {
     
-    @Binding var progress: CGFloat
+    @Binding var progress: Double
     let content: Content
 
     /// Initializes a new instance of `RainbowScrollProgressView`.
@@ -87,7 +87,7 @@ public struct RainbowScrollProgressView<Content: View>: NSViewRepresentable {
     /// - Parameters:
     ///   - progress: A binding to the progress value.
     ///   - content: A view builder that provides the content to be displayed inside the scroll view.
-    public init(progress: Binding<CGFloat>, @ViewBuilder content: () -> Content) {
+    public init(progress: Binding<Double>, @ViewBuilder content: () -> Content) {
         self._progress = progress
         self.content = content()
     }
@@ -137,9 +137,9 @@ public struct RainbowScrollProgressView<Content: View>: NSViewRepresentable {
     }
 
     public class Coordinator: NSObject {
-        var parent: RainbowScrollProgressView
+        var parent: RainbowProgressScrollView
 
-        init(_ parent: RainbowScrollProgressView) {
+        init(_ parent: RainbowProgressScrollView) {
             self.parent = parent
         }
 

@@ -1,5 +1,4 @@
 import SwiftUI
-import Rainbow
 
 // Implement the RainbowButtonColorTheme struct
 public struct RainbowButtonColorTheme: Equatable, RainbowBaseColorTheme {
