@@ -358,12 +358,9 @@ RainbowField(
 )
 ```
 <br />
-<br />
 ## Youtube (Rainbow Mini Series)
-
+Checkout the new mini series for Rainbow how-tos on Youtube: 
 https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
-<img width="983" alt="Screenshot 2024-07-24 at 7 07 44 PM" src="https://github.com/user-attachments/assets/63852be7-5714-4840-94ae-68818dfdccc0">
-
 <br />
 
 ## Sample Code
