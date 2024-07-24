@@ -358,7 +358,10 @@ RainbowField(
 )
 ```
 <br />
-## Youtube (Rainbow Mini Series)
+<br />
+
+# 📺 Youtube (Rainbow Mini Series)
+
 Checkout the new mini series for Rainbow how-tos on Youtube: 
 https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
 <br />
