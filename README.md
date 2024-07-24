@@ -19,9 +19,6 @@ To install the Rainbow library, follow these steps:
 4. Choose the version you want to install. For example, to install version 2.2.1, select: ~> `2.2.1`
 5. Click Add Package to integrate Rainbow into your project.
 
-###### Instructional video on how to install: 
-https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=2
-
 <br />
 
 ## Features
@@ -38,9 +35,6 @@ https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK
 
 ###### Overview
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
-
-###### Instructional video on RainbowButtonModifier and RainbowButtonConfiguration: 
-https://www.youtube.com/watch?v=oWUJ-kzcI9Y&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=3&pp=iAQB
 
 <br />
 
@@ -362,11 +356,8 @@ RainbowField(
     )
 )
 ```
-See the examples respository: https://github.com/iheartswift/Examples
-And related file: https://github.com/iheartswift/Examples/blob/main/RainbowExamples/RainbowExamples/Examples/ExampleFieldsView.swift
 
-
-## Youtube
+## Youtube (Rainbow Mini Series)
 
 Click the link below for the **Youtube video series** on how to use Rainbow:
 https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
