@@ -21,7 +21,7 @@ To install the Rainbow library, follow these steps:
 
 ###### Instructional video on how to install: 
 https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=2
-```
+
 <br />
 
 ## Features
