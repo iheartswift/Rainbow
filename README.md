@@ -365,6 +365,6 @@ RainbowField(
 Checkout the new mini series for Rainbow how-tos on Youtube: 
 https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
 <br />
-
-## Sample Code
+<br />
+# 👩🏽‍💻 Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
