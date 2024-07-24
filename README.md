@@ -346,10 +346,10 @@ Key Features
 | Valid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
 | Invalid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
 
-### Beta
+###### Beta
 The API for this component isn't stable yet, still playing around with ideas :) feel free to chime in!
 
-### Example
+###### Example
 
 ```swift
 RainbowField(
@@ -362,7 +362,8 @@ RainbowField(
     )
 )
 ```
-See the **Examples Repository** [TBD] Link.
+See the examples respository: https://github.com/iheartswift/Examples
+And related file: https://github.com/iheartswift/Examples/blob/main/RainbowExamples/RainbowExamples/Examples/ExampleFieldsView.swift
 
 
 ## Youtube
