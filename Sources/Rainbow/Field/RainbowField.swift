@@ -3,9 +3,21 @@ import SwiftUI
 /// A SwiftUI view that displays a text field or secure field with configurable options, validation, and styling.
 /// It adapts based on the field type and state, providing dynamic validation and appearance updates.
 public struct RainbowField: View {
+    
+    /// Encapsulated adjustments
+    private struct Defaults {
+        static let paddingSmall: CGFloat = 2.0
+        static let fieldOffsetX: CGFloat = 8.0
+        static let buttonOffsetX: CGFloat = 0.5
+        static let fieldPadding: CGFloat = 10.0
+        static let gap: CGFloat = 15.0
+    }
 
     /// Observed object
     @ObservedObject private var viewModel: RainbowFieldViewModel
+    
+    /// Used to calculate round corners of optional cta button
+    @State private var backgroundHeight: CGFloat = 0.0
     
     /// is field focused
     @FocusState private var focusState: Bool
@@ -54,7 +66,7 @@ public struct RainbowField: View {
         if let options = viewModel.configuration.headerOptions, let text = options.text {
             Text(text)
                 .font(options.font)
-                .padding(.bottom, 2)
+                .padding(.bottom, Defaults.paddingSmall)
                 .foregroundColor(options.color)
         }
     }
@@ -81,7 +93,7 @@ public struct RainbowField: View {
                 .foregroundColor(viewModel.configuration.placeholderTextOptions.color)
         )
         .focused($focusState)
-        .padding(10)
+        .padding(Defaults.fieldPadding)
         .onChange(of: viewModel.text) { _, _ in
             viewModel.validateText()
         }
@@ -105,7 +117,7 @@ public struct RainbowField: View {
                 .foregroundColor(viewModel.configuration.placeholderTextOptions.color)
         )
         .focused($focusState)
-        .padding(10)
+        .padding(Defaults.fieldPadding)
         .onChange(of: viewModel.text) { _, _ in
             viewModel.validateText()
         }
@@ -134,7 +146,7 @@ public struct RainbowField: View {
                 textField
             }
         }
-        .offset(x: -8)
+        .offset(x: -Defaults.fieldOffsetX)
     }
 
     /// Generates a button to clear the text field content and validation messages.
@@ -205,26 +217,24 @@ public struct RainbowField: View {
         HStack {
             leftImage
             field
-                .padding(.leading, hasLeftImage ? 0 : 15)
+                .padding(.leading, hasLeftImage ? 0 : Defaults.gap)
             clearButtonOrRightImage
-                .padding(.trailing, 15)
+                .padding(.trailing, Defaults.gap)
         }
         .background(backgroundView)
     }
-    
-    @State private var backgroundHeight: CGFloat = 0
-    
+        
     @ViewBuilder
     var ctaStyle: some View {
         header
         HStack {
             leftImage
             field
-                .padding(.leading, hasLeftImage ? 0 : 15)
+                .padding(.leading, hasLeftImage ? 0 : Defaults.gap)
             clearButtonOrRightImage
-                .padding(.trailing, 2)
+                .padding(.trailing, Defaults.paddingSmall)
             ctaButton(for: viewModel.configuration.shapeType, height: backgroundHeight)
-                .offset(x: -0.5)
+                .offset(x: -Defaults.buttonOffsetX)
         }
         .background(
             GeometryReader { geometry in
@@ -295,13 +305,13 @@ public struct RainbowField: View {
             Rectangle()
                 .stroke(viewModel.currentStateAppearanceConfiguration.borderColor, lineWidth: viewModel.currentStateAppearanceConfiguration.borderWidth)
         case .roundedRectangle(let cornerRadius):
-            RoundedRectangle(cornerRadius: cornerRadius ?? 8.0)
+            RoundedRectangle(cornerRadius: cornerRadius ?? RainbowDefaults.cornerRadius)
                 .stroke(viewModel.currentStateAppearanceConfiguration.borderColor, lineWidth: viewModel.currentStateAppearanceConfiguration.borderWidth)
         case .capsule:
             Capsule()
                 .stroke(viewModel.currentStateAppearanceConfiguration.borderColor, lineWidth: viewModel.currentStateAppearanceConfiguration.borderWidth)
         case .circle:
-            RoundedRectangle(cornerRadius: 8.0)
+            RoundedRectangle(cornerRadius: RainbowDefaults.cornerRadius)
                 .stroke(viewModel.currentStateAppearanceConfiguration.borderColor, lineWidth: viewModel.currentStateAppearanceConfiguration.borderWidth)
         }
     }
