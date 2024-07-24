@@ -307,6 +307,51 @@ All light and outlined variations of RainwboNotificationConfiguration are availa
 
 <br />
 
+# TextFields (Beta)
+
+Introducing RainbowField: A Highly Customizable SwiftUI Component
+Welcome to RainbowField, a versatile and highly customizable text field component for SwiftUI! RainbowField offers a wide range of configuration options to tailor its appearance and behavior to your needs. Whether you need a standard text field or a call-to-action (CTA) field, RainbowField has you covered. Below is a comprehensive overview of the configuration options available to help you get the most out of this component.
+
+Key Features
+- Field Style: Choose between default and CTA styles to suit your use case.
+- Shape Type: Define the bounding box shape of the field, such as a rounded rectangle.
+- Header Options: Add optional headers to provide context or instructions above the field.
+- Text Options: Customize the appearance and behavior of the text within the field.
+- CTA Options: Integrate call-to-action elements seamlessly within the field.
+- Placeholder Text Options: Personalize the placeholder text to guide users effectively.
+- Caption Text Options: Add captions below the field for additional information or hints.
+- Cursor Options: Modify the cursor's appearance to enhance user experience.
+- Clear Button Options: Include clear buttons for quick text deletion, suitable for fields like username, email, and password.
+- Icon Options: Add icons to the field for a more intuitive interface.
+- State-Based Appearance: Define distinct appearances for idle, focus, valid, and invalid states to provide visual feedback to users.
+- Validation Rules: Implement custom validation rules to ensure data integrity.
+
+| TextField Appearance States | Screenshot |
+|------|------------|
+| Idle State | <img width="541" alt="Screenshot 2024-07-23 at 7 43 53 PM" src="https://github.com/user-attachments/assets/1e0311e3-06b8-4167-8ef8-19ae39390720">|
+| Focus | <img width="543" alt="Screenshot 2024-07-23 at 7 44 05 PM" src="https://github.com/user-attachments/assets/a82cb250-eb2e-4450-bcc1-dcc940ae5a78"> |
+| Valid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
+| Invalid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
+
+### Beta
+The API for this component isn't stable yet, still playing around with ideas :) feel free to chime in!
+
+### Example
+
+```swift
+RainbowField(
+    viewModel: RainbowFieldViewModel(
+        configuration: RainbowFieldConfiguration.Builder()
+            .setHeaderOptions(.init(text: "Image left"))
+            .setIconOptions(.init(leftImageSystemName: "phone"))
+            .setPlaceholderTextOptions(.init(text: "Enter Phone"))
+            .build()
+    )
+)
+```
+See the **Examples Repository** [TBD] Link.
+
+
 ## Youtube
 
 Click the link below for the **Youtube video series** on how to use Rainbow:
