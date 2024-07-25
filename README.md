@@ -263,7 +263,7 @@ RainbowProgressScrollView(progress: $progress) {
 
 <br />
 
-# ♣️ Cards
+# Cards
 
 Cards are highly configurable and support a few cool features out the box like auto-playing video and loading images from a network.
 
@@ -335,8 +335,8 @@ Key Features
 |------|------------|
 | Idle State | <img width="541" alt="Screenshot 2024-07-23 at 7 43 53 PM" src="https://github.com/user-attachments/assets/1e0311e3-06b8-4167-8ef8-19ae39390720">|
 | Focus | <img width="543" alt="Screenshot 2024-07-23 at 7 44 05 PM" src="https://github.com/user-attachments/assets/a82cb250-eb2e-4450-bcc1-dcc940ae5a78"> |
-| Valid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
-| Invalid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
+| Invalid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
+| Valid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
 
 ###### Beta
 The API for this component isn't stable yet, still playing around with ideas :) feel free to chime in!
