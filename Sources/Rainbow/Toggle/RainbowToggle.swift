@@ -6,7 +6,7 @@ public struct RainbowToggle: View {
     var configuration: RainbowToggleConfiguration
     @Binding var isToggled: Bool
     
-    init(_ configuration: RainbowToggleConfiguration, isToggled: Binding<Bool>) {
+    public init(_ configuration: RainbowToggleConfiguration, isToggled: Binding<Bool>) {
         self.configuration = configuration
         self._isToggled = isToggled
     }
