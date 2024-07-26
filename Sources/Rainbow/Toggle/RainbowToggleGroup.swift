@@ -32,11 +32,11 @@ public struct RainbowToggleGroupConfiguration {
 
 /// A group of RainbowToggle components arranged either horizontally or vertically.
 public struct RainbowToggleGroup<Item: Identifiable & Hashable, Content: View>: View {
-    
+
+    public var configuration: RainbowToggleGroupConfiguration
     @Binding public var selectedItems: Set<Item>
     public var items: [Item]
     public var itemContent: (Item) -> Content
-    public var configuration: RainbowToggleGroupConfiguration
     
     /// Initializes a new RainbowToggleGroup.
     /// - Parameters:
@@ -44,10 +44,12 @@ public struct RainbowToggleGroup<Item: Identifiable & Hashable, Content: View>: 
     ///   - items: The items to display in the toggle group.
     ///   - itemContent: A closure that provides the content for each item.
     ///   - configuration: The configuration for the toggle group.
-    public init(selectedItems: Binding<Set<Item>>,
-                items: [Item],
-                @ViewBuilder itemContent: @escaping (Item) -> Content,
-                configuration: RainbowToggleGroupConfiguration) {
+    public init(
+        configuration: RainbowToggleGroupConfiguration,
+        selectedItems: Binding<Set<Item>>,
+        items: [Item],
+        @ViewBuilder _ itemContent: @escaping (Item) -> Content
+    ) {
         self._selectedItems = selectedItems
         self.items = items
         self.itemContent = itemContent
