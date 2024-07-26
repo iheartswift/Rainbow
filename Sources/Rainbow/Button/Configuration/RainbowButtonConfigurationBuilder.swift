@@ -22,7 +22,7 @@ extension RainbowButtonConfiguration {
         private var underline: Bool = false
         
         /// The size of the button.
-        private var size: RainbowButtonSize = .normal
+        private var size: RainbowSize = .normal
         
         /// The shape type of the button.
         private var shapeType: RainbowShapeType = .roundedRectangle()
@@ -100,7 +100,7 @@ extension RainbowButtonConfiguration {
         ///
         /// - Parameter size: The size of the button.
         /// - Returns: The builder instance.
-        public func setSize(_ size: RainbowButtonSize) -> RainbowButtonConfiguration.Builder {
+        public func setSize(_ size: RainbowSize) -> RainbowButtonConfiguration.Builder {
             self.size = size
             return self
         }

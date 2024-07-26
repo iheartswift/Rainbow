@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// An enum representing different sizes for a Rainbow Button.
-public enum RainbowButtonSize {
+public enum RainbowSize {
     
     /// A small size for the button.
     case small
@@ -72,6 +72,24 @@ public enum RainbowButtonSize {
             return 48 / 2
         case .jumbo:
             return 56 / 2
+        }
+    }
+    
+    /// The suggested height associated with the button size.
+    public var diameter: CGFloat {
+        switch self {
+        case .small:
+            return 24
+        case .normal:
+            return 30
+        case .medium:
+            return 36
+        case .large:
+            return 42
+        case .extraLarge:
+            return 48
+        case .jumbo:
+            return 56
         }
     }
 }

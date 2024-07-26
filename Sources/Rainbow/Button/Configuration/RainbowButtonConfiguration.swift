@@ -21,7 +21,7 @@ public struct RainbowButtonConfiguration {
     public var underline: Bool
     
     /// The size of the button.
-    public var size: RainbowButtonSize
+    public var size: RainbowSize
     
     /// A Boolean indicating whether the button should use a capsule shape.
     public var shapeType: RainbowShapeType
@@ -74,7 +74,7 @@ public struct RainbowButtonConfiguration {
         shadow: RainbowShadowOptions = RainbowShadowOptions(),
         cornerRadius: CGFloat = RainbowDefaults.cornerRadius,
         underline: Bool = false,
-        size: RainbowButtonSize = .normal,
+        size: RainbowSize = .normal,
         shapeType: RainbowShapeType = .roundedRectangle(),
         loaderType: RainbowLoaderType = .rainbow,
         contentGradient: RainbowGradientOptions? = nil,
@@ -112,7 +112,7 @@ public struct RainbowButtonConfiguration {
     /// Updates the size of the button.
     /// - Parameter size: The new size for the button.
     /// - Returns: A new instance of `RainbowButtonConfiguration` with the updated size.
-    public func update(_ size: RainbowButtonSize) -> RainbowButtonConfiguration {
+    public func update(_ size: RainbowSize) -> RainbowButtonConfiguration {
         var c = self
         c.size = size
         return c
@@ -132,7 +132,7 @@ extension RainbowButtonConfiguration {
     public static func configure(
         _ configuration: RainbowButtonConfiguration,
         _ shape: RainbowShapeType,
-        _ size: RainbowButtonSize = .extraLarge
+        _ size: RainbowSize = .extraLarge
     ) -> RainbowButtonConfiguration {
         var c = configuration
         c.size = size
