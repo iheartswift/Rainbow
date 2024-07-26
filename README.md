@@ -309,7 +309,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Hello")
+            Text(notificationText)
                 .rainbowNotification(configuration: .primary, isPresented: $isPresented)
         }
         .padding()
