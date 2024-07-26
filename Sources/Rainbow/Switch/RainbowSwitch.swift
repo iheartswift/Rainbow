@@ -4,18 +4,19 @@ import SwiftUI
 
 /// A customizable switch component that can be used as a toggle.
 public struct RainbowSwitch: View {
-    /// A binding to the switch's on/off state.
-    @Binding var isOn: Bool
     /// The configuration for the switch.
     var configuration: RainbowSwitchConfiguration
+    
+    /// A binding to the switch's on/off state.
+    @Binding var isOn: Bool
     
     /// Initializes a new instance of RainbowSwitch.
     /// - Parameters:
     ///   - isOn: A binding to the switch's on/off state.
     ///   - configuration: The configuration for the switch.
-    public init(isOn: Binding<Bool>, configuration: RainbowSwitchConfiguration) {
-        self._isOn = isOn
+    public init(configuration: RainbowSwitchConfiguration, isOn: Binding<Bool>) {
         self.configuration = configuration
+        self._isOn = isOn
     }
     
     /// Creates the content and behavior of the `RainbowSwitch` view.

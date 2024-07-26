@@ -86,7 +86,7 @@ public struct RainbowSwitchConfiguration {
 
 public extension RainbowSwitchConfiguration {
     
-    static func configure(theme: RainbowSwitchColorTheme, size: RainbowSize) -> RainbowSwitchConfiguration {
+    static func configure(theme: RainbowSwitchColorTheme, size: RainbowSize = .normal) -> RainbowSwitchConfiguration {
         RainbowSwitchConfiguration.Builder()
             .setTheme(theme)
             .setSize(size)
