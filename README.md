@@ -369,8 +369,8 @@ RainbowField(
 - Shadow Effects: Customize the shadow color to match your design.
 - Predefined Themes: Utilize predefined color themes for quick and consistent styling.
 
-###### Video
-https://github.com/user-attachments/assets/07175f24-851a-4059-8ace-784de8b4070c
+###### Screenshots / Demo
+![ezgif-7-57b72b24fd](https://github.com/user-attachments/assets/47cad0fa-9052-4ec6-a51d-73fe02fb40db)
 
 ###### Example
 
@@ -396,8 +396,8 @@ RainbowSwitch(configuration: .configure(theme: .primary), isOn: $isOn)
 - Animations: Add smooth animations for state changes with configurable animation options.
 - Predefined Themes: Utilize predefined color themes for quick and consistent styling.
 
-###### Video
-https://github.com/user-attachments/assets/8816cc10-0770-4158-bb2c-524a398974e3
+###### Screenshots / Demo
+![ezgif-7-fe725f02c6](https://github.com/user-attachments/assets/459f06dd-7f41-4e1e-85e6-d4279a6e340a)
 
 ###### Example
 
