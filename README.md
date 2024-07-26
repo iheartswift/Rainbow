@@ -36,8 +36,9 @@ To install the Rainbow library, follow these steps:
 | Sliders                          | 📣  | 📣    | 📣   | 📣      |
 | Dropdowns                        | 📣  | 📣    | 📣   | 📣      |
 | Modals                           | 📣  | 📣    | 📣   | 📣      |
+| Adaptive Colors                  | 📣  | 📣    | 📣   | 📣      |
 
-### Legend
+###### Legend
 - ✅: Supported
 - 📣: Coming soon
 
