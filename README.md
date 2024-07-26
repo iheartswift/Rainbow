@@ -299,14 +299,22 @@ RainbowCard(headerContent: RainbowCardHeader(title: "Card title"))
 The notification is a simple colored block meant to draw the attention to the user about something. As such, it can be used as a pinned notification in the corner of the view. That's why it supports the use of the close button.
 
 ```swift
-@State private var isPresented = false
+import SwiftUI
+import Rainbow
 
-let notificationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla."
+struct ContentView: View {
+    @State private var isPresented = true
 
-Text(notificationText)
-     .rainbowNotification(configuration: .outlineWarning, isPresented: $isPresented) {
-           print("Closed")
-     }
+    let notificationText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur."
+    
+    var body: some View {
+        VStack {
+            Text("Hello")
+                .rainbowNotification(configuration: .primary, isPresented: $isPresented)
+        }
+        .padding()
+    }
+}
 ```
 
 | Code | Screenshot |
