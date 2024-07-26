@@ -16,11 +16,8 @@ To install the Rainbow library, follow these steps:
 1. Open your Xcode project.
 2. Select **File** > **Add Packages...** from the menu.
 3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
-4. Choose the version you want to install. For example, to install version 2.2.0, select: ~> `2.2.0`
+4. Choose the version you want to install. For example, to install version 2.2.1, select: ~> `2.2.1`
 5. Click Add Package to integrate Rainbow into your project.
-
-###### Instructional video on how to install: 
-https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=2
 
 <br />
 
@@ -31,6 +28,7 @@ https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK
 - [x] Progress Bar for ScrollView (iOS, macOS, tvOS, watchOS)
 - [x] Cards (iOS, macOS)
 - [x] Notifications (iOS, macOS, tvOS, watchOS)
+- [x] TextFields (iOS, macOS*) [📣 Coming to tvOS/watchOS soon]
 
 <br />
 
@@ -38,9 +36,6 @@ https://www.youtube.com/watch?v=V5DX5m-pp7g&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK
 
 ###### Overview
 At the ❤️ of rainbow buttons is the `RainbowButtonConfiguration`. All of the pre-configured buttons below are made with this object and you can use it and it's builder when you need to take control of your own buttons. 
-
-###### Instructional videos: 
-https://www.youtube.com/watch?v=oWUJ-kzcI9Y&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=3&pp=iAQB
 
 <br />
 
@@ -225,9 +220,6 @@ Text("Sign in")
 
 # Progress Bars
 
-###### Instructional videos: 
-https://www.youtube.com/watch?v=BYQB2YGo1z8&list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0&index=5
-
 Progress bars are simple to initialize and support all the same pre-configurations as Button except for outline and inverted.
 
 ```swift
@@ -241,13 +233,13 @@ RainbowProgressBar(.configure(.primary, .capsule), $progress)
 
 | Code | Screenshot |
 |------|------------|
-| Primary | <img width="390" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
-| Info | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
-| Link | <img width="390" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/0d1bcf77-23c9-4146-9d2f-30a3ea6da182">|
-| Success | <img width="388" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
-| Warning | <img width="383" alt="Screenshot 2024-06-29 at 9 51 38 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/c0dc350a-d20c-4387-8847-a5e7d4c5c544">|
-| Danger | <img width="385" alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
-| Gradient | <img width="383" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
+| Primary | <img width="400" alt="Screenshot 2024-06-29 at 10 11 37 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/9d1ee7a6-f4b0-4e6e-be0f-6f2e8941305b">|
+| Info | <img width="400" alt="Screenshot 2024-06-29 at 10 10 11 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/e13fce59-6cd8-4798-ab6a-66fd368fb748">|
+| Link | <img width="400" alt="Screenshot 2024-07-24 at 7 03 01 PM" src="https://github.com/user-attachments/assets/f7f92488-b6f0-4358-ab79-bd592fdf05ad">|
+| Success | <img width="400" alt="Screenshot 2024-06-29 at 10 11 42 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/31448fc9-8884-4203-b105-709998ab5f85">|
+| Warning | <img width="400" alt="Screenshot 2024-06-29 at 9 51 38 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/c0dc350a-d20c-4387-8847-a5e7d4c5c544">|
+| Danger | <img width="400" alt="Screenshot 2024-06-29 at 9 51 43 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/3eb01faa-0582-46ef-9c60-b152bbf74a7d">|
+| Gradient | <img width="400" alt="Screenshot 2024-06-29 at 9 51 50 AM" src="https://github.com/iheartswift/Rainbow/assets/1205894/74c359b0-6ff6-44cb-abf1-3409e0f7ed1b">|
 | Rainbow | ![ezgif-2-0308acf325](https://github.com/iheartswift/Rainbow/assets/1205894/850c1714-ad46-4f97-97a4-6aaa53b658e7)| 
 
 ### Progress Bars and ScrollView 
@@ -314,9 +306,9 @@ Text(notificationText)
 | Warning | <img width="1064" alt="Screenshot 2024-07-07 at 1 28 34 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/578a6e01-a0ad-461a-99ec-d72d5fe5d49d"> |
 | Danger | <img width="1064" alt="Screenshot 2024-07-07 at 1 29 09 PM" src="https://github.com/iheartswift/Rainbow/assets/1205894/4ca99ead-20a6-46c1-b93c-9d07e3342207">|
 
-##### RainbowNotification Variations
 
-All light and outlined variations of RainwboNotificationConfiguration are available for use as well.
+##### RainbowNotification Variations
+All light and outlined variations of RainbowNotificationConfiguration are available for use as well.
 
 <br />
 
@@ -341,15 +333,15 @@ Key Features
 
 | TextField Appearance States | Screenshot |
 |------|------------|
-| Idle State | <img width="541" alt="Screenshot 2024-07-23 at 7 43 53 PM" src="https://github.com/user-attachments/assets/1e0311e3-06b8-4167-8ef8-19ae39390720">|
+| Idle | <img width="541" alt="Screenshot 2024-07-23 at 7 43 53 PM" src="https://github.com/user-attachments/assets/1e0311e3-06b8-4167-8ef8-19ae39390720">|
 | Focus | <img width="543" alt="Screenshot 2024-07-23 at 7 44 05 PM" src="https://github.com/user-attachments/assets/a82cb250-eb2e-4450-bcc1-dcc940ae5a78"> |
-| Valid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
-| Invalid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
+| Invalid | <img width="542" alt="Screenshot 2024-07-23 at 7 44 20 PM" src="https://github.com/user-attachments/assets/7f0cb895-a73a-4925-8066-098dc6843eb5"> |
+| Valid | <img width="568" alt="Screenshot 2024-07-23 at 7 44 34 PM" src="https://github.com/user-attachments/assets/f84d1646-d3fc-478b-a5cc-d57d9da7d2fd"> |
 
-### Beta
+###### Beta
 The API for this component isn't stable yet, still playing around with ideas :) feel free to chime in!
 
-### Example
+###### Example
 
 ```swift
 RainbowField(
@@ -362,15 +354,14 @@ RainbowField(
     )
 )
 ```
-See the **Examples Repository** [TBD] Link.
-
-
-## Youtube
-
-Click the link below for the **Youtube video series** on how to use Rainbow:
-https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
-
+<br />
 <br />
 
-## Sample Code
+# 📺 Youtube (Rainbow Mini Series)
+
+Checkout the new mini series for Rainbow how-tos on Youtube: 
+https://www.youtube.com/playlist?list=PLwTsipC5z3HvwEDbgZlSLaoxECgIxK5W0
+<br />
+<br />
+# 👩🏽‍💻 Sample Code
 Take a look at [Example Projects](https://github.com/iheartswift/Examples) **RainbowExamples** to get your projects started.
