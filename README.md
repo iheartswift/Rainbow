@@ -23,14 +23,19 @@ To install the Rainbow library, follow these steps:
 
 ## Features
 
-- [x] Buttons (iOS, macOS, tvOS, watchOS)
-- [x] Progress Bars (iOS, macOS, tvOS, watchOS)
-- [x] Progress Bar for ScrollView (iOS, macOS, tvOS, watchOS)
-- [x] Cards (iOS, macOS)
-- [x] Notifications (iOS, macOS, tvOS, watchOS)
-- [x] TextFields (iOS, macOS*) [📣 Coming to tvOS/watchOS soon]
-- [x] Toggles and Toggle Groups
-- [x] Switchs  
+| Feature                          | iOS | macOS | tvOS | watchOS | Status                    |
+|----------------------------------|-----|-------|------|---------|---------------------------|
+| Buttons                          | ✅  | ✅    | ✅   | ✅      |                           |
+| Progress Bars                    | ✅  | ✅    | ✅   | ✅      |                           |
+| Progress Bar for ScrollView      | ✅  | ✅    | ✅   | ✅      |                           |
+| Cards                            | ✅  | ✅    |      |         |                           |
+| Notifications                    | ✅  | ✅    | ✅   | ✅      |                           |
+| TextFields                       | ✅  | ✅    | 📣   | 📣      | Coming to tvOS/watchOS    |
+| Toggles and Toggle Groups        | ✅  | ✅    |      | ✅      |                           |
+| Switches                         | ✅  | ✅    | 📣   | ✅      | Coming to tvOS            |
+| Sliders                          | 📣  | 📣    | 📣   | 📣      | Coming soon               |
+| Dropdowns                        | 📣  | 📣    | 📣   | 📣      | Coming soon               |
+| Modals                           | 📣  | 📣    | 📣   | 📣      | Coming soon               |
 
 <br />
 
