@@ -419,6 +419,9 @@ Text("Tap me")
 
 **RainbowToggleGroup** can be used to group toggles together and allow for multi-selection
 
+###### Screenshots / Demo
+![ezgif-7-04522dd2b5](https://github.com/user-attachments/assets/7bca4196-ca7f-4aa3-a8eb-cff184b1f558)
+
 ###### Example
 
 ```swift
