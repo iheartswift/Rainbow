@@ -16,7 +16,7 @@ To install the Rainbow library, follow these steps:
 1. Open your Xcode project.
 2. Select **File** > **Add Packages...** from the menu.
 3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
-4. Choose the version you want to install. For example, to install version 3.1, select: ~> `3.1`
+4. Choose the version you want to install. For example, to install version 3.0.1, select: ~> `3.0.1`
 5. Click Add Package to integrate Rainbow into your project.
 
 <br />
@@ -357,7 +357,6 @@ RainbowField(
 )
 ```
 <br />
-<br />
 
 # RainbowSwitch
 
@@ -415,7 +414,6 @@ Text("Tap me")
     )
 ```
 <br />
-<br />
 
 ### Toggle Groups
 
@@ -424,6 +422,8 @@ Text("Tap me")
 ###### Example
 
 ```swift
+import SwiftUI
+import Rainbow
 
 struct ExampleToggleGroupView: View {
     
@@ -443,18 +443,10 @@ struct ExampleToggleGroupView: View {
     
     var body: some View {
         
-        let toggleConfiguration = RainbowToggleConfiguration.Builder()
-            .setBorderWidth(2.0)
-            .setShapeType(.circle)
-            .setImageSystemName("checkmark.circle.fill")
-            .setAnimation(.spring())
-            .setTheme(.primary)
-            .build()
-        
         let groupConfiguration = RainbowToggleGroupConfiguration(
             orientation: .vertical,
             spacing: 10,
-            toggleConfiguration: toggleConfiguration
+            toggleConfiguration: .configure(theme: .primary, imageSystemName: "checkmark")
         )
         
         RainbowToggleGroup(
