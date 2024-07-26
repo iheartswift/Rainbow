@@ -16,7 +16,7 @@ To install the Rainbow library, follow these steps:
 1. Open your Xcode project.
 2. Select **File** > **Add Packages...** from the menu.
 3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
-4. Choose the version you want to install. For example, to install version 3.0.2, select: ~> `3.0.2`
+4. Choose the version you want to install. For example, to install version 3.0.3, select: ~> `3.0.3`
 5. Click Add Package to integrate Rainbow into your project.
 
 <br />
