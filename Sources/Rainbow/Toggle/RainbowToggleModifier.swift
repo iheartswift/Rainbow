@@ -13,7 +13,7 @@ public struct RainbowToggleModifier: ViewModifier {
     /// - Returns: A view that contains an `HStack` with a `RainbowToggle` and the original content view.
     public func body(content: Content) -> some View {
         HStack {
-            RainbowToggle(configuration: configuration, isToggled: $isToggled)
+            RainbowToggle(configuration, isToggled: $isToggled)
             content
         }
         .onTapGesture {

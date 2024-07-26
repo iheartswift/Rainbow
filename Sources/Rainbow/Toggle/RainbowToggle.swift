@@ -2,8 +2,14 @@ import SwiftUI
 
 /// A customizable toggle component that can be used as a checkbox or radio button.
 public struct RainbowToggle: View {
+    
     var configuration: RainbowToggleConfiguration
     @Binding var isToggled: Bool
+    
+    init(_ configuration: RainbowToggleConfiguration, isToggled: Binding<Bool>) {
+        self.configuration = configuration
+        self._isToggled = isToggled
+    }
 
     @ViewBuilder
     private var shape: some View {

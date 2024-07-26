@@ -73,7 +73,7 @@ public struct RainbowToggleGroup<Item: Identifiable & Hashable, Content: View>: 
                 HStack(spacing: configuration.spacing) {
                     ForEach(items) { item in
                         HStack {
-                            RainbowToggle(configuration: configuration.toggleConfiguration, isToggled: isSelected(item: item))
+                            RainbowToggle(configuration.toggleConfiguration, isToggled: isSelected(item: item))
                             itemContent(item)
                         }
                         .onTapGesture {
@@ -87,7 +87,7 @@ public struct RainbowToggleGroup<Item: Identifiable & Hashable, Content: View>: 
                 VStack(spacing: configuration.spacing) {
                     ForEach(items) { item in
                         HStack {
-                            RainbowToggle(configuration: configuration.toggleConfiguration, isToggled: isSelected(item: item))
+                            RainbowToggle(configuration.toggleConfiguration, isToggled: isSelected(item: item))
                             itemContent(item)
                         }
                         .onTapGesture {
