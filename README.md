@@ -23,19 +23,23 @@ To install the Rainbow library, follow these steps:
 
 ## Features
 
-| Feature                          | iOS | macOS | tvOS | watchOS | Status                    |
-|----------------------------------|-----|-------|------|---------|---------------------------|
-| Buttons                          | ✅  | ✅    | ✅   | ✅      |                           |
-| Progress Bars                    | ✅  | ✅    | ✅   | ✅      |                           |
-| Progress Bar for ScrollView      | ✅  | ✅    | ✅   | ✅      |                           |
-| Cards                            | ✅  | ✅    |      |         |                           |
-| Notifications                    | ✅  | ✅    | ✅   | ✅      |                           |
-| TextFields                       | ✅  | ✅    | 📣   | 📣      | Coming to tvOS/watchOS    |
-| Toggles and Toggle Groups        | ✅  | ✅    |      | ✅      |                           |
-| Switches                         | ✅  | ✅    | 📣   | ✅      | Coming to tvOS            |
-| Sliders                          | 📣  | 📣    | 📣   | 📣      | Coming soon               |
-| Dropdowns                        | 📣  | 📣    | 📣   | 📣      | Coming soon               |
-| Modals                           | 📣  | 📣    | 📣   | 📣      | Coming soon               |
+| Feature                          | iOS | macOS | tvOS | watchOS |
+|----------------------------------|-----|-------|------|---------|
+| Buttons                          | ✅  | ✅    | ✅   | ✅      |
+| Progress Bars                    | ✅  | ✅    | ✅   | ✅      |
+| Progress Bar for ScrollView      | ✅  | ✅    | ✅   | ✅      |
+| Cards                            | ✅  | ✅    |      |         |
+| Notifications                    | ✅  | ✅    | ✅   | ✅      |
+| TextFields                       | ✅  | ✅    | 📣   | 📣      |
+| Toggles and Toggle Groups        | ✅  | ✅    |      | ✅      |
+| Switches                         | ✅  | ✅    | 📣   | ✅      |
+| Sliders                          | 📣  | 📣    | 📣   | 📣      |
+| Dropdowns                        | 📣  | 📣    | 📣   | 📣      |
+| Modals                           | 📣  | 📣    | 📣   | 📣      |
+
+### Legend
+- ✅: Supported
+- 📣: Coming soon
 
 <br />
 
