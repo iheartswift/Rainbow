@@ -16,7 +16,7 @@ To install the Rainbow library, follow these steps:
 1. Open your Xcode project.
 2. Select **File** > **Add Packages...** from the menu.
 3. In the search field, paste the following URL: **https://github.com/iheartswift/Rainbow.git**
-4. Choose the version you want to install. For example, to install version 2.2.1, select: ~> `2.2.1`
+4. Choose the version you want to install. For example, to install version 3.1, select: ~> `3.1`
 5. Click Add Package to integrate Rainbow into your project.
 
 <br />
@@ -29,6 +29,8 @@ To install the Rainbow library, follow these steps:
 - [x] Cards (iOS, macOS)
 - [x] Notifications (iOS, macOS, tvOS, watchOS)
 - [x] TextFields (iOS, macOS*) [📣 Coming to tvOS/watchOS soon]
+- [x] Toggles and Toggle Groups
+- [x] Switchs  
 
 <br />
 
@@ -317,7 +319,7 @@ All light and outlined variations of RainbowNotificationConfiguration are availa
 Introducing RainbowField: A Highly Customizable SwiftUI Component
 Welcome to RainbowField, a versatile and highly customizable text field component for SwiftUI! RainbowField offers a wide range of configuration options to tailor its appearance and behavior to your needs. Whether you need a standard text field or a call-to-action (CTA) field, RainbowField has you covered. Below is a comprehensive overview of the configuration options available to help you get the most out of this component.
 
-Key Features
+### Key Features
 - Field Style: Choose between default and CTA styles to suit your use case.
 - Shape Type: Define the bounding box shape of the field, such as a rounded rectangle.
 - Header Options: Add optional headers to provide context or instructions above the field.
@@ -353,6 +355,125 @@ RainbowField(
             .build()
     )
 )
+```
+<br />
+<br />
+
+# RainbowSwitch
+
+**RainbowSwitch** is a customizable and versatile switch component built with SwiftUI. It allows you to create beautiful and interactive switches with ease. The component is highly configurable, enabling you to tailor its appearance and behavior to fit your app's design and requirements.
+
+### Key Features
+- Customizable Colors: Use RainbowSwitchColorTheme to easily set the colors for the switch's on and off states, handle, and borders.
+- Shape Options: Choose between capsule and rectangle shapes for the switch.
+- Animations: Add smooth animations for state changes with configurable animation options.
+- Shadow Effects: Customize the shadow color to match your design.
+- Predefined Themes: Utilize predefined color themes for quick and consistent styling.
+
+###### Video
+https://github.com/user-attachments/assets/07175f24-851a-4059-8ace-784de8b4070c
+
+###### Example
+
+```swift
+
+/// In your view 
+@State private var isOn: Bool = false
+
+/// In your views body
+RainbowSwitch(configuration: .configure(theme: .primary), isOn: $isOn)
+
+```
+<br />
+<br />
+
+# RainbowToggle
+
+**RainbowToggle** is a highly customizable and flexible toggle component built with SwiftUI. It provides a wide range of configuration options to create beautiful and interactive toggles that seamlessly fit into your app's design.
+
+### Key Features
+- Customizable Colors: Use RainbowToggleColorTheme to easily set the colors for the toggles on and off states.
+- Shape Options: Choose between rectangle, circle, roundedRect shapes for the switch.
+- Animations: Add smooth animations for state changes with configurable animation options.
+- Predefined Themes: Utilize predefined color themes for quick and consistent styling.
+
+###### Video
+https://github.com/user-attachments/assets/8816cc10-0770-4158-bb2c-524a398974e3
+
+###### Example
+
+```swift
+
+/// In your view 
+@State private var isToggled = false
+
+/// In your views body
+Text("Tap me")
+    .rainbowToggle(
+        .configure(theme: .primary, imageSystemName: "checkmark"),
+        isToggled: $isToggled
+    )
+```
+<br />
+<br />
+
+### Toggle Groups
+
+**RainbowToggleGroup** can be used to group toggles together and allow for multi-selection
+
+###### Example
+
+```swift
+
+struct ExampleToggleGroupView: View {
+    
+    struct ExampleItem: Identifiable, Hashable {
+        var id = UUID()
+        var name: String
+        var description: String
+    }
+    
+    @State private var selectedItems: Set<ExampleItem> = []
+    
+    private let items = [
+        ExampleItem(name: "Option 1", description: "This is some description"),
+        ExampleItem(name: "Option 2", description: "This is some description"),
+        ExampleItem(name: "Option 3", description: "This is some description")
+    ]
+    
+    var body: some View {
+        
+        let toggleConfiguration = RainbowToggleConfiguration.Builder()
+            .setBorderWidth(2.0)
+            .setShapeType(.circle)
+            .setImageSystemName("checkmark.circle.fill")
+            .setAnimation(.spring())
+            .setTheme(.primary)
+            .build()
+        
+        let groupConfiguration = RainbowToggleGroupConfiguration(
+            orientation: .vertical,
+            spacing: 10,
+            toggleConfiguration: toggleConfiguration
+        )
+        
+        RainbowToggleGroup(
+            selectedItems: $selectedItems,
+            items: items,
+            itemContent: { item in
+                VStack(alignment: .leading) {
+                    Text(item.name)
+                        .font(.headline)
+                    Text(item.description)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+            }, 
+            configuration: groupConfiguration
+        )
+        .padding()
+    }
+}
 ```
 <br />
 <br />
